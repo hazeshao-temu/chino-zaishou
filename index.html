@@ -1,378 +1,387 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>chino 长裤 · 爆款大爆款图集</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHINO（商务休闲风）长裤爆款视觉</title>
 <style>
   :root{
-    --paper:#FAF8F4; --card:#FFFFFF; --ink:#14130F; --ink2:#3D3A32; --muted:#8C8578;
-    --line:#E3DED3; --line2:#CFC8B8; --accent:#8A6A3B; --soft:#F2EEE6;
-    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
-    --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif;
-    --serif:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+    --paper:#F1ECE1;
+    --paper-2:#E7E0D1;
+    --ink:#1B1914;
+    --ink-soft:#5B5548;
+    --olive:#3F4430;
+    --khaki:#A78C58;
+    --line:rgba(27,25,20,.16);
+    --gap:1px;
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;
-    line-height:1.75;-webkit-font-smoothing:antialiased;}
-  img{display:block;}
-  button,input,select{font-family:inherit;font-size:inherit;color:inherit;}
-  .wrap{max-width:1440px;margin:0 auto;padding:0 18px;}
-  @media(min-width:768px){.wrap{padding:0 34px;}}
-  @media(min-width:1280px){.wrap{padding:0 56px;}}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Helvetica Neue','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* 纸张纹理 */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.045;
+    background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--olive);color:var(--paper);}
 
-  /* ---------- header ---------- */
-  header{padding:56px 0 0;}
-  .top{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;}
-  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
-  .eyebrow b{font-weight:700;}
-  h1{font-family:var(--serif);font-size:clamp(28px,4.2vw,50px);line-height:1.2;
-    font-weight:700;letter-spacing:.005em;margin-top:16px;}
-  h1 span{color:var(--accent);}
-  .lead{margin-top:16px;max-width:660px;font-size:14.5px;line-height:1.95;color:var(--ink2);}
-  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:34px;
-    border-top:1px solid var(--ink);border-bottom:1px solid var(--line);}
-  @media(min-width:720px){.facts{grid-template-columns:repeat(4,1fr);}}
-  .facts div{padding:16px 0 14px 0;border-bottom:1px solid var(--line);}
-  @media(min-width:720px){.facts div{border-bottom:0;border-right:1px solid var(--line);padding-right:14px;}
-    .facts div:last-child{border-right:0;}}
-  .facts b{display:block;font-family:var(--mono);font-size:26px;font-weight:600;line-height:1.3;
-    letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
-  .facts b.rng{font-size:17px;letter-spacing:0;}
-  .facts span{font-size:12px;color:var(--muted);letter-spacing:.06em;}
+  /* ---------- 顶栏 ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(241,236,225,.86);
+    backdrop-filter:saturate(180%) blur(14px);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{
+    max-width:1680px;margin:0 auto;
+    display:flex;align-items:center;gap:28px;
+    padding:14px 32px;
+  }
+  .brand{display:flex;align-items:baseline;gap:10px;flex-shrink:0;}
+  .brand b{
+    font-family:Georgia,'Songti SC','Noto Serif SC',serif;
+    font-size:19px;letter-spacing:.14em;font-weight:600;
+  }
+  .brand i{
+    font-style:normal;font-size:10px;letter-spacing:.34em;
+    text-transform:uppercase;color:var(--khaki);
+  }
+  .search{
+    position:relative;flex:1;max-width:420px;margin-left:auto;
+  }
+  .search input{
+    width:100%;border:1px solid var(--line);background:transparent;
+    border-radius:999px;padding:9px 16px 9px 36px;
+    font-size:13px;color:var(--ink);outline:none;
+    transition:.25s;font-family:inherit;
+  }
+  .search input:focus{border-color:var(--olive);background:rgba(255,255,255,.45);}
+  .search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);opacity:.45;}
 
-  /* ---------- toolbar ---------- */
-  .bar{position:sticky;top:0;z-index:40;background:rgba(250,248,244,.94);
-    backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);margin-top:26px;}
-  .barin{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:11px 0;}
-  .search{position:relative;flex:1 1 240px;min-width:200px;}
-  .search input{width:100%;background:#fff;border:1px solid var(--line2);border-radius:2px;
-    padding:8px 32px 8px 32px;font-size:13.5px;outline:none;transition:border-color .15s;}
-  .search input:focus{border-color:var(--ink);}
-  .search .ico{position:absolute;left:11px;top:50%;transform:translateY(-50%);
-    font-size:12px;color:var(--muted);}
-  .search .clr{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;
-    background:none;color:var(--muted);cursor:pointer;font-size:15px;line-height:1;padding:2px 4px;display:none;}
-  .search .clr.on{display:block;}
-  .search .clr:hover{color:var(--ink);}
-  .sel{position:relative;flex:0 1 auto;}
-  .sel select{appearance:none;background:#fff;border:1px solid var(--line2);border-radius:2px;
-    padding:8px 30px 8px 11px;font-size:13px;cursor:pointer;outline:none;max-width:230px;
-    transition:border-color .15s;text-overflow:ellipsis;}
-  .sel select:focus,.sel select:hover{border-color:var(--ink);}
-  .sel::after{content:"▾";position:absolute;right:10px;top:50%;transform:translateY(-50%);
-    font-size:10px;color:var(--muted);pointer-events:none;}
-  .counter{margin-left:auto;font-family:var(--mono);font-size:12.5px;color:var(--muted);
-    letter-spacing:.02em;white-space:nowrap;}
-  .counter b{color:var(--ink);font-weight:600;}
-  .ghost{border:1px solid var(--line2);background:#fff;border-radius:2px;padding:8px 12px;
-    font-size:13px;cursor:pointer;transition:border-color .15s,background .15s;white-space:nowrap;}
-  .ghost:hover{border-color:var(--ink);background:var(--soft);}
+  /* ---------- Hero ---------- */
+  .hero{
+    max-width:1680px;margin:0 auto;
+    padding:72px 32px 46px;
+    border-bottom:1px solid var(--line);
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(300px,40%);
+    gap:56px;
+    align-items:end;
+  }
+  .spec{
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.34);
+    padding:22px 24px 24px;
+    display:flex;flex-direction:column;
+  }
+  .spec .row{display:grid;grid-template-columns:78px 1fr;gap:16px;padding:14px 0;}
+  .spec .row:first-child{padding-top:0;}
+  .spec .row:last-child{padding-bottom:0;}
+  .spec .row + .row{border-top:1px solid var(--line);}
+  .spec dt{
+    font-size:11px;letter-spacing:.16em;color:var(--khaki);
+    padding-top:3px;white-space:nowrap;font-weight:600;
+  }
+  .spec dd{
+    font-size:12.8px;line-height:1.9;color:var(--ink-soft);letter-spacing:.01em;
+  }
+  .cat{
+    display:inline-block;margin-bottom:28px;
+    font-size:12.5px;letter-spacing:.1em;line-height:1;
+    color:var(--olive);
+    border:1px solid rgba(63,68,48,.32);
+    background:rgba(167,140,88,.12);
+    padding:8px 14px;border-radius:2px;
+  }
+  h1{
+    font-family:Georgia,'Songti SC','Noto Serif SC',serif;
+    font-weight:500;
+  }
+  h1 .en{
+    display:block;
+    font-size:clamp(54px,9.6vw,136px);
+    line-height:.88;letter-spacing:.055em;
+  }
+  h1 .cn{
+    display:block;margin-top:22px;
+    font-size:clamp(20px,2.5vw,33px);
+    line-height:1.35;letter-spacing:.07em;font-weight:400;
+  }
+  h1 .cn em{font-style:normal;color:var(--khaki);}
 
-  /* ---------- grid ---------- */
-  main{padding:26px 0 40px;}
-  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px;}
-  @media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 16px;}}
-  @media(min-width:900px){.grid{grid-template-columns:repeat(4,minmax(0,1fr));}}
-  @media(min-width:1200px){.grid{grid-template-columns:repeat(5,minmax(0,1fr));}}
-  @media(min-width:1400px){.grid{grid-template-columns:repeat(6,minmax(0,1fr));}}
+  /* ---------- 网格 ---------- */
+  main{max-width:1680px;margin:0 auto;padding:0 32px 110px;}
+  .resline{
+    padding:20px 0 14px;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--ink-soft);display:none;
+  }
+  .resline.on{display:block;}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(172px,1fr));
+    gap:var(--gap);
+    background:var(--line);
+    border:1px solid var(--line);
+    border-top:none;
+  }
+  .card{
+    position:relative;display:block;text-decoration:none;color:inherit;
+    background:var(--paper);
+    opacity:0;transform:translateY(14px);
+    transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1);
+  }
+  .card.in{opacity:1;transform:none;}
+  .thumb{
+    position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--paper-2);
+  }
+  .thumb img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .8s cubic-bezier(.22,1,.36,1),filter .5s;
+    filter:saturate(.94);
+  }
+  .card:hover .thumb img{transform:scale(1.045);filter:saturate(1.03);}
+  .idx{
+    position:absolute;top:8px;left:9px;z-index:2;
+    font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    font-size:9.5px;letter-spacing:.1em;color:rgba(255,255,255,.92);
+    background:rgba(27,25,20,.55);padding:2px 5px;
+    backdrop-filter:blur(3px);
+  }
+  .veil{
+    position:absolute;inset:0;z-index:2;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:12px;
+    background:linear-gradient(to top,rgba(30,34,22,.9) 0%,rgba(30,34,22,.42) 46%,rgba(30,34,22,0) 76%);
+    opacity:0;transition:opacity .35s ease;
+  }
+  .card:hover .veil{opacity:1;}
+  .veil .go{
+    font-size:12px;letter-spacing:.1em;color:#F4F0E5;font-weight:500;
+    transform:translateY(6px);transition:transform .4s cubic-bezier(.22,1,.36,1);
+  }
+  .veil .spu{
+    margin-top:5px;font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    font-size:10px;color:rgba(244,240,229,.62);letter-spacing:.04em;
+    transform:translateY(6px);transition:transform .4s .04s cubic-bezier(.22,1,.36,1);
+  }
+  .card:hover .veil .go,.card:hover .veil .spu{transform:none;}
+  .foot{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:8px;padding:10px 12px 12px;
+    border-top:1px solid var(--line);
+  }
+  .foot .id{
+    font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    font-size:10.5px;color:var(--ink-soft);letter-spacing:.02em;
+  }
+  .copy{
+    border:none;background:none;cursor:pointer;padding:2px;
+    opacity:0;transition:.25s;color:var(--ink-soft);line-height:0;
+  }
+  .card:hover .copy{opacity:.75;}
+  .copy:hover{opacity:1!important;color:var(--olive);}
+  .copy.done{color:var(--olive);opacity:1!important;}
 
-  .card{display:flex;flex-direction:column;min-width:0;}
-  .frame{position:relative;background:var(--soft);overflow:hidden;cursor:zoom-in;
-    border:1px solid var(--line);}
-  .frame img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.2,1);}
-  .card:hover .frame img{transform:scale(1.035);}
-  .veil{position:absolute;inset:auto 0 0 0;display:flex;gap:6px;padding:8px;
-    background:linear-gradient(to top,rgba(20,19,15,.72),rgba(20,19,15,0));
-    opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s;}
-  .card:hover .veil,.card:focus-within .veil{opacity:1;transform:translateY(0);}
-  @media(hover:none){.veil{opacity:1;transform:none;background:rgba(20,19,15,.55);padding:6px;}}
-  .act{flex:1 1 auto;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.10);
-    color:#fff;font-size:11.5px;padding:5px 6px;border-radius:2px;cursor:pointer;
-    white-space:nowrap;transition:background .15s;backdrop-filter:blur(2px);}
-  .act:hover{background:rgba(255,255,255,.24);}
-  .badge{position:absolute;top:8px;left:8px;background:var(--accent);color:#fff;
-    font-family:var(--mono);font-size:10.5px;padding:2px 6px;border-radius:2px;letter-spacing:.02em;}
-  .fail{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;
-    justify-content:center;gap:6px;padding:10px;text-align:center;background:var(--soft);}
-  .frame.broken .fail{display:flex;}
-  .fail span{font-size:11.5px;color:var(--muted);line-height:1.6;}
-  .fail a{font-size:11.5px;color:var(--accent);}
+  .empty{
+    display:none;padding:120px 0;text-align:center;
+    font-family:Georgia,'Songti SC',serif;font-size:22px;color:var(--ink-soft);
+  }
+  .empty.on{display:block;}
 
-  .info{padding:8px 2px 0;}
-  .l1{display:flex;align-items:center;gap:6px;}
-  .spu{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:-.01em;
-    font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-  .cp{margin-left:auto;flex:0 0 auto;border:0;background:none;color:var(--muted);
-    font-size:10.5px;cursor:pointer;padding:1px 2px;opacity:0;transition:opacity .15s,color .15s;}
-  .card:hover .cp{opacity:1;}
-  .cp:hover{color:var(--accent);}
-  @media(hover:none){.cp{opacity:1;}}
-  .l2{display:flex;align-items:center;justify-content:flex-end;min-height:14px;margin-top:1px;}
-  .date{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.01em;}
-  .batch{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--accent);}
+  #top{
+    position:fixed;right:26px;bottom:26px;z-index:200;
+    width:42px;height:42px;border-radius:50%;
+    border:1px solid var(--line);background:rgba(241,236,225,.9);
+    backdrop-filter:blur(8px);cursor:pointer;
+    display:grid;place-items:center;color:var(--ink-soft);
+    opacity:0;transform:translateY(12px);pointer-events:none;
+    transition:.35s cubic-bezier(.22,1,.36,1);
+  }
+  #top.on{opacity:1;transform:none;pointer-events:auto;}
+  #top:hover{color:var(--olive);border-color:var(--olive);}
 
-  .empty{grid-column:1/-1;padding:70px 0;text-align:center;color:var(--muted);font-size:14px;}
+  footer{
+    border-top:1px solid var(--line);
+    max-width:1680px;margin:0 auto;padding:34px 32px 60px;
+    display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+  }
 
-  /* ---------- lightbox ---------- */
-  .lb{position:fixed;inset:0;background:rgba(250,248,244,.985);z-index:100;display:none;
-    flex-direction:column;}
-  .lb.open{display:flex;}
-  .lbbar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);
-    flex-wrap:wrap;}
-  .lbs{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:-.01em;}
-  .lbsub{font-size:12.5px;color:var(--muted);}
-  .lbright{margin-left:auto;display:flex;align-items:center;gap:8px;}
-  .lbcount{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.02em;}
-  .lbbtn{border:1px solid var(--line2);background:#fff;border-radius:2px;font-size:12.5px;
-    padding:5px 11px;cursor:pointer;transition:border-color .15s,color .15s,background .15s;}
-  .lbbtn:hover{border-color:var(--ink);background:var(--soft);}
-  .lbbtn.pri{background:var(--ink);border-color:var(--ink);color:#fff;}
-  .lbbtn.pri:hover{opacity:.85;background:var(--ink);}
-  .lbstage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;
-    padding:16px 56px;min-height:0;}
-  .lbstage img{max-width:100%;max-height:100%;object-fit:contain;background:#fff;}
-  .nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;
-    border:1px solid var(--line2);background:rgba(255,255,255,.94);border-radius:50%;
-    cursor:pointer;font-size:16px;color:var(--ink2);display:flex;align-items:center;
-    justify-content:center;transition:border-color .15s,color .15s;}
-  .nav:hover{border-color:var(--ink);color:var(--ink);}
-  .nav.p{left:10px;} .nav.n{right:10px;}
-  @media(max-width:640px){.lbstage{padding:10px 6px;} .nav{display:none;}}
+  @media(max-width:1080px){
+    .hero{grid-template-columns:1fr;gap:36px;align-items:start;}
+  }
 
-  /* ---------- toast ---------- */
-  .toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,14px);background:var(--ink);
-    color:#fff;font-size:12.5px;padding:8px 16px;border-radius:2px;opacity:0;
-    pointer-events:none;transition:opacity .2s,transform .2s;z-index:200;
-    font-family:var(--mono);letter-spacing:.02em;}
-  .toast.on{opacity:1;transform:translate(-50%,0);}
+  @media(max-width:900px){
+    .bar{padding:12px 18px;gap:14px;flex-wrap:wrap;}
+    .search{max-width:100%;order:3;flex-basis:100%;margin-left:0;}
+    .hero{padding:44px 18px 28px;grid-template-columns:1fr;gap:34px;align-items:start;}
+    main{padding:0 18px 70px;}
+    .grid{grid-template-columns:repeat(auto-fill,minmax(142px,1fr));}
+    #top{
+    position:fixed;right:26px;bottom:26px;z-index:200;
+    width:42px;height:42px;border-radius:50%;
+    border:1px solid var(--line);background:rgba(241,236,225,.9);
+    backdrop-filter:blur(8px);cursor:pointer;
+    display:grid;place-items:center;color:var(--ink-soft);
+    opacity:0;transform:translateY(12px);pointer-events:none;
+    transition:.35s cubic-bezier(.22,1,.36,1);
+  }
+  #top.on{opacity:1;transform:none;pointer-events:auto;}
+  #top:hover{color:var(--olive);border-color:var(--olive);}
 
-  footer{border-top:1px solid var(--ink);padding:20px 0 56px;display:flex;flex-wrap:wrap;
-    gap:8px 20px;justify-content:space-between;font-size:12px;color:var(--muted);}
-  footer b{font-weight:600;color:var(--ink2);}
+  footer{padding:28px 18px 44px;}
+  }
 </style>
 </head>
 <body>
-
-<header class="wrap">
-  <div class="top">
-    <span class="eyebrow">Chino Trousers <b>·</b> Best Sellers</span>
-  </div>
-  <h1>chino 长裤<span> · </span>爆款大爆款图集</h1>
-  <p class="lead">收录 chino 长裤爆款与大爆款共 187 个商品 SPU。每张卡片展示 SPU 头图与商品 SPU ID，默认按首次加入站点时间由晚到早排列；支持按 SPU ID 检索、切换排序、一键复制 SPU ID，点击图片可放大浏览。</p>
-  <div class="facts">
-    <div><b>187</b><span>商品 SPU</span></div>
-    <div><b>321</b><span>加站记录</span></div>
-    <div><b>112</b><span>单次加站</span></div>
-    <div><b>75</b><span>多次加站</span></div>
+<header>
+  <div class="bar">
+    <div class="brand"><b>CHINO</b><i>长裤爆款视觉</i></div>
+    <div class="search">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg>
+      <input id="q" type="text" inputmode="numeric" placeholder="搜索 SPU ID 片段…" autocomplete="off">
+    </div>
   </div>
 </header>
 
-<div class="bar">
-  <div class="wrap barin">
-    <label class="search">
-      <span class="ico">⌕</span>
-      <input id="q" type="search" placeholder="搜索 SPU ID" autocomplete="off">
-      <button class="clr" id="clr" aria-label="清空">×</button>
-    </label>
-    <span class="sel">
-      <select id="sort">
-        <option value="first-desc" selected>首次加站 · 晚 → 早</option>
-        <option value="first-asc">首次加站 · 早 → 晚</option>
-        <option value="batch-desc">加站次数 · 多在前</option>
-        <option value="spu-asc">SPU ID · 升序</option>
-      </select>
-    </span>
-    <button class="ghost" id="copyall">复制全部 SPU</button>
-    <span class="counter"><b id="shown">0</b> / 187</span>
+<section class="hero">
+  <div class="headline">
+    <div class="cat">其他休闲裤-chino裤</div>
+    <h1><span class="en">CHINO</span><span class="cn">（商务休闲风）长裤<em>爆款视觉</em></span></h1>
   </div>
-</div>
+  <dl class="spec">
+    <div class="row"><dt>核心面料</dt><dd>棉、涤纶、粘纤、TR、羊毛混纺、天丝、莫代尔，各种混纺（涤棉、涤粘、锦纶氨纶等）、四面弹、铜氨丝等。</dd></div>
+    <div class="row"><dt>腰头</dt><dd>平整纽扣腰、半松紧腰、加长腰袢、搭扣、侧调节、隐藏式闭合腰等。</dd></div>
+    <div class="row"><dt>裤型</dt><dd>直筒、阔腿、锥形等。</dd></div>
+  </dl>
+</section>
 
-<main class="wrap">
+<main>
+  <div class="resline" id="resline"></div>
   <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">未找到匹配的 SPU</div>
 </main>
 
-<footer class="wrap">
-  <span><b>chino 长裤 · 爆款大爆款图集</b> · 数据源：chino长裤爆款大爆款.xlsx</span>
-  <span>187 SPU / 321 加站记录</span>
+<button id="top" aria-label="回到顶部">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<footer>
+  <span>CHINO（商务休闲风）长裤爆款视觉</span>
+  <span>点击卡片跳转前台商品页 · 点击图标复制链接</span>
 </footer>
 
-<div class="lb" id="lb">
-  <div class="lbbar">
-    <span class="lbs" id="lbs"></span>
-    <span class="lbsub" id="lbsub"></span>
-    <span class="lbright">
-      <span class="lbcount" id="lbc"></span>
-      <button class="lbbtn pri" id="lbcopy">复制 SPU ID</button>
-      <button class="lbbtn" id="lbclose">关闭</button>
-    </span>
-  </div>
-  <div class="lbstage">
-    <button class="nav p" id="lbp" aria-label="上一张">‹</button>
-    <img id="lbimg" alt="">
-    <button class="nav n" id="lbn" aria-label="下一张">›</button>
-  </div>
-</div>
-
-<div class="toast" id="toast"></div>
-
 <script>
-const DATA = [{"spu":"606686660111110","img":"https://img.kwcdn.com/product/temu-avi/image-crop/8b67bcd3-7eb2-4e4e-b765-332bf58f573f.jpg","first":"2026-09-28 20:17:53","last":"2026-10-28 13:00:43","batch":3},{"spu":"607314094449011","img":"https://img.kwcdn.com/product/temu-avi/image-crop/6fa08fc7-6008-48e3-a32b-4af24b0e3e54.jpg","first":"2026-10-18 18:05:51","last":"2026-10-19 15:04:47","batch":2},{"spu":"607449385947721","img":"https://img.kwcdn.com/product/temu-avi/image-crop/1ec2687a-aa40-4d25-9636-0bd5790a6312.jpg","first":"2026-10-15 09:04:00","last":"2026-10-15 09:04:00","batch":1},{"spu":"606843795543203","img":"https://img.kwcdn.com/product/temu-avi/image-crop/2a71a41b-c580-4f43-a100-19a917560d71.jpg","first":"2026-10-13 15:43:30","last":"2026-10-13 15:43:30","batch":1},{"spu":"606892113901076","img":"https://img.kwcdn.com/product/temu-avi/image-crop/6e1f843c-bda8-4771-bd1d-585e03166ee9.jpg","first":"2026-10-13 12:50:16","last":"2026-10-13 12:50:16","batch":1},{"spu":"607455291538592","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d1ea2b87-416d-4c96-beca-1411876c18ff.jpg","first":"2026-10-12 22:05:53","last":"2026-10-14 20:19:26","batch":2},{"spu":"607137463941412","img":"https://img.kwcdn.com/product/temu-avi/image-crop/a24967f4-d209-41f4-9cb4-8a9068734099.jpg","first":"2026-10-14 22:10:22","last":"2026-10-15 18:37:11","batch":2},{"spu":"606731589548502","img":"https://img.kwcdn.com/product/temu-avi/image-crop/a08cce74-27fc-4ef4-919c-6fa950a64feb.jpg","first":"2026-10-09 14:13:09","last":"2026-10-09 14:13:09","batch":1},{"spu":"606662870060657","img":"https://img.kwcdn.com/product/temu-avi/image-crop/0f5be0e8-b137-439b-a549-ea439ee8416f.jpg","first":"2026-10-09 04:26:39","last":"2026-10-09 04:26:39","batch":1},{"spu":"607466028923690","img":"https://img.kwcdn.com/product/temu-avi/image-crop/2a0d11f9-2b7a-4abf-ba7e-9c22229431bd.jpg","first":"2026-10-08 02:07:46","last":"2026-10-08 02:07:46","batch":1},{"spu":"607474618874275","img":"https://img.kwcdn.com/product/open/97855606fea6459ea6b1f523c31b3073-goods.jpeg","first":"2026-10-06 21:15:57","last":"2026-10-06 21:15:57","batch":1},{"spu":"607488577473227","img":"https://img.kwcdn.com/product/open/02ca7beb26554b208fc7e177da007e1b-goods.jpeg","first":"2026-10-06 21:15:57","last":"2026-10-06 21:15:57","batch":1},{"spu":"607457439013710","img":"https://img.kwcdn.com/product/open/950f55b42144493ea271dcb736153d63-goods.jpeg","first":"2026-10-06 21:15:57","last":"2026-10-06 21:15:57","batch":1},{"spu":"607583066772966","img":"https://img.kwcdn.com/product/temu-avi/image-crop/16ba1883-00c6-4fe6-8fa9-94c6803e32ef.jpg","first":"2026-10-06 16:47:42","last":"2026-10-06 16:47:42","batch":1},{"spu":"607086998071673","img":"https://img.kwcdn.com/product/temu-avi/image-crop/529072d9-8551-4526-b54d-a126e3c3831f.jpg","first":"2026-10-08 14:19:19","last":"2026-10-08 18:53:04","batch":2},{"spu":"606635221198736","img":"https://img.kwcdn.com/product/temu-avi/image-crop/071db9ff-d9c0-4c25-b00c-e9146a5187be.jpg","first":"2026-09-27 16:32:56","last":"2026-09-27 16:32:56","batch":1},{"spu":"606770512670026","img":"https://img.kwcdn.com/product/temu-avi/image-crop/f3878e38-4420-4f92-8045-6ca08e636079.jpg","first":"2026-10-12 19:18:19","last":"2026-10-12 19:18:19","batch":1},{"spu":"606667433474579","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d43a7385-3742-4542-91e1-e5d228726878.jpg","first":"2026-09-25 10:36:07","last":"2026-09-25 10:36:07","batch":1},{"spu":"607595146352971","img":"https://img.kwcdn.com/product/temu-avi/image-crop/9af74c0f-bb70-4e4d-981d-6c234e0e5255.jpg","first":"2026-10-04 21:06:04","last":"2026-10-04 21:06:04","batch":1},{"spu":"606784471274974","img":"https://img.kwcdn.com/product/temu-avi/image-crop/5f083ac4-c898-4b60-89db-6f5f88903e98.jpg","first":"2026-09-30 09:51:16","last":"2026-09-30 11:14:49","batch":2},{"spu":"606689982011193","img":"https://img.kwcdn.com/product/temu-avi/image-crop/f9c9e9e0-64ff-45f3-8f97-2e28d6cc1d90.jpg","first":"2026-09-24 23:04:26","last":"2026-09-24 23:04:26","batch":1},{"spu":"607098540814644","img":"https://img.kwcdn.com/product/temu-avi/image-crop/96b49e83-c632-4b48-9635-4c74d70d5a90.jpg","first":"2026-10-15 11:01:08","last":"2026-10-16 12:54:30","batch":2},{"spu":"607650444065852","img":"https://img.kwcdn.com/product/temu-avi/image-crop/1932eb7c-6af2-4d9c-bea1-81904013c917.jpg","first":"2026-10-17 08:55:05","last":"2026-10-17 08:55:05","batch":1},{"spu":"606808630466970","img":"https://img.kwcdn.com/product/temu-avi/image-crop/b6f01ae5-35cb-47f0-85cd-8d290d08b553.jpg","first":"2026-09-20 11:24:08","last":"2026-09-20 11:24:08","batch":1},{"spu":"606649716695436","img":"https://img.kwcdn.com/product/temu-avi/image-crop/4e9d1c4b-fec2-4f70-93dc-d86648a6742c.jpg","first":"2026-09-20 14:50:47","last":"2026-09-20 14:50:47","batch":1},{"spu":"606902046005904","img":"https://img.kwcdn.com/product/temu-avi/image-crop/6fdf4684-a1b2-42eb-867d-4befcf71ee51.jpg","first":"2026-09-27 21:41:40","last":"2026-10-25 09:20:42","batch":4},{"spu":"607047974276209","img":"https://img.kwcdn.com/product/temu-avi/image-crop/e7512ce8-b441-4cf4-8c17-9c0207dab309.jpg","first":"2026-09-16 11:16:46","last":"2026-09-25 10:45:39","batch":6},{"spu":"606972812325159","img":"https://img.kwcdn.com/product/temu-avi/image-crop/3acd56cd-1928-4946-ab9e-18b637e8c195.jpg","first":"2026-09-15 06:02:09","last":"2026-09-17 13:45:11","batch":2},{"spu":"607221920410212","img":"https://img.kwcdn.com/product/temu-avi/image-crop/61ae0142-0a40-4233-83fc-fa6bf7ecb16b.jpg","first":"2026-09-17 22:06:55","last":"2026-09-17 22:06:55","batch":1},{"spu":"607590213879389","img":"https://img.kwcdn.com/product/temu-avi/image-crop/de4f8f20-9937-4a0a-a1c0-c5ddf40d72ce.jpg","first":"2026-09-20 13:41:20","last":"2026-10-27 20:55:59","batch":3},{"spu":"606834299645778","img":"https://img.kwcdn.com/product/temu-avi/image-crop/138bb335-c61f-4d5e-90c9-f5d0bd9c9ffb.jpg","first":"2026-10-09 20:50:46","last":"2026-10-09 20:50:46","batch":1},{"spu":"606937378827978","img":"https://img.kwcdn.com/product/temu-avi/image-crop/1b6486fb-e8af-4692-852f-ceda2f88acf5.jpg","first":"2026-09-26 12:45:09","last":"2026-09-26 12:45:09","batch":1},{"spu":"606696860686822","img":"https://img.kwcdn.com/product/temu-avi/image-crop/426e371b-10cd-4382-82a5-fd960c6d9f49.jpg","first":"2026-10-14 12:52:25","last":"2026-10-14 12:52:25","batch":1},{"spu":"606860069461050","img":"https://img.kwcdn.com/product/temu-avi/image-crop/3092c467-3b43-43c8-b20b-43a3c50ab761.jpg","first":"2026-09-14 00:43:24","last":"2026-09-14 00:43:24","batch":1},{"spu":"607581623939064","img":"https://img.kwcdn.com/product/temu-avi/image-crop/849533a3-df0d-477b-a814-03b2f4a5fb91.jpg","first":"2026-09-28 20:38:46","last":"2026-09-28 20:38:46","batch":1},{"spu":"606751084655340","img":"https://img.kwcdn.com/product/temu-avi/image-crop/223ba7be-1cce-42a5-89a4-0ff0bc3dcb8d.jpg","first":"2026-09-11 15:18:20","last":"2026-09-11 15:18:20","batch":1},{"spu":"607017372596417","img":"https://img.kwcdn.com/product/open/9e6eebfc9f4f4d90ad0125bcaab78001-goods.jpeg","first":"2026-09-18 14:50:29","last":"2026-09-18 14:50:29","batch":1},{"spu":"607498408955566","img":"https://img.kwcdn.com/product/open/7b9c8fe0f22346978003cf9c4895e0d5-goods.jpeg","first":"2026-09-18 14:50:29","last":"2026-09-18 14:50:29","batch":1},{"spu":"607554243552256","img":"https://img.kwcdn.com/product/temu-avi/image-crop/71abb765-169d-4aac-8f9b-040b773a10d6.jpg","first":"2026-10-02 11:01:36","last":"2026-10-02 11:01:36","batch":1},{"spu":"607492369168970","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d66d3f10-ed2d-4c17-84af-66e1d890a32b.jpg","first":"2026-09-02 17:01:46","last":"2026-10-04 10:27:11","batch":2},{"spu":"606815509166644","img":"https://img.kwcdn.com/product/temu-avi/image-crop/829ad560-75df-465e-b5c7-d392c117ae3a.jpg","first":"2026-09-18 02:52:06","last":"2026-09-18 23:32:06","batch":2},{"spu":"607442574407247","img":"https://img.kwcdn.com/product/temu-avi/image-crop/f27a55e1-4b0d-405b-b5a0-5123c451e071.jpg","first":"2026-10-02 11:01:36","last":"2026-10-02 11:01:36","batch":1},{"spu":"606875638695031","img":"https://img.kwcdn.com/product/temu-avi/image-crop/3b23cee7-c5f5-4c78-80d1-e1a6c043eb3d.jpg","first":"2026-09-27 11:40:27","last":"2026-09-27 11:40:27","batch":1},{"spu":"605564750919383","img":"https://img.kwcdn.com/product/temu-avi/image-crop/bc62f4ad-4b2d-48bd-a59b-2975668b0bf2.jpg","first":"2026-07-14 17:42:08","last":"2026-09-19 17:52:54","batch":3},{"spu":"606900334765467","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d87e632f-4800-43a5-9893-784f7c2c4736.jpg","first":"2026-09-10 10:39:20","last":"2026-09-10 10:39:20","batch":1},{"spu":"606603982025636","img":"https://img.kwcdn.com/product/open/2aac9dd8bd344373b8347ad1c6ed5f7d-goods.jpeg","first":"2026-09-06 21:38:17","last":"2026-09-06 21:38:17","batch":1},{"spu":"607381371089435","img":"https://img.kwcdn.com/product/open/e7444d457d0c4ebba89649c32d431594-goods.jpeg","first":"2026-09-06 21:38:17","last":"2026-09-06 21:38:17","batch":1},{"spu":"607312651618779","img":"https://img.kwcdn.com/product/temu-avi/image-crop/e6e28a44-35fd-469d-be98-8b7cc46914aa.jpg","first":"2026-09-05 22:49:57","last":"2026-09-05 22:49:57","batch":1},{"spu":"606171884842612","img":"https://img.kwcdn.com/product/temu-avi/image-crop/7d2c50da-6544-4e51-bde4-8cbd49bf6b44.jpg","first":"2026-04-19 11:19:45","last":"2026-10-26 20:24:10","batch":8},{"spu":"606640489231461","img":"https://img.kwcdn.com/product/temu-avi/image-crop/89384640-4b4c-4129-8f4f-7bd0fce6d47c.jpeg","first":"2026-09-05 16:55:01","last":"2026-09-05 16:55:01","batch":1},{"spu":"607094950454081","img":"https://img.kwcdn.com/product/temu-avi/image-crop/0530f5e4-10a3-4276-b6e8-011d32bbaf9f.jpg","first":"2026-09-10 20:42:35","last":"2026-09-10 20:42:35","batch":1},{"spu":"606747058103661","img":"https://img.kwcdn.com/product/temu-avi/image-crop/9c2db8d5-c7eb-4a81-b1b6-9f85f65de381.jpg","first":"2026-09-06 15:32:07","last":"2026-09-08 20:57:01","batch":2},{"spu":"606841547401016","img":"https://img.kwcdn.com/product/temu-avi/image-crop/fd479a4f-9408-4870-9fdb-b6909ddbfc53.jpg","first":"2026-09-16 10:23:35","last":"2026-09-16 10:23:35","batch":1},{"spu":"606823293794079","img":"https://img.kwcdn.com/product/open/0b7ffb3deede4bbbad08853ef4da70db-goods.jpeg","first":"2026-09-02 14:57:02","last":"2026-09-02 14:57:02","batch":1},{"spu":"606902750646086","img":"https://img.kwcdn.com/product/temu-avi/image-crop/8f214917-c5ce-421c-8f67-ac3cab863b20.jpg","first":"2026-10-07 00:29:37","last":"2026-10-07 00:29:37","batch":1},{"spu":"607478276278222","img":"https://img.kwcdn.com/product/temu-avi/image-crop/4f5ebcdb-2052-4bcc-9d27-eee5a6063dcf.jpg","first":"2026-08-30 09:13:51","last":"2026-08-30 09:13:51","batch":1},{"spu":"607405261854987","img":"https://img.kwcdn.com/product/temu-avi/image-crop/c705eae7-89f3-433d-89d3-8f752d18085d.jpg","first":"2026-09-03 19:18:20","last":"2026-09-06 13:46:24","batch":2},{"spu":"605830770444799","img":"https://img.kwcdn.com/product/temu-avi/image-crop/4500b661-ea62-4820-a9a5-881f4d5846b4.jpg","first":"2026-07-13 19:03:56","last":"2026-09-11 16:45:02","batch":3},{"spu":"606937647293020","img":"https://img.kwcdn.com/product/temu-avi/image-crop/4e46b416-dbc0-4c94-ab43-1740c3bd5fe4.jpg","first":"2026-09-04 10:24:29","last":"2026-09-05 12:49:59","batch":2},{"spu":"606868927777443","img":"https://img.kwcdn.com/product/temu-avi/image-crop/b0a1753e-a44d-4b29-ba5d-ce6be78f348b.jpg","first":"2026-08-28 10:57:57","last":"2026-08-28 10:57:57","batch":1},{"spu":"607337079253816","img":"https://img.kwcdn.com/product/temu-avi/image-crop/a5da847b-4d74-487a-8137-53732dcc9643.jpg","first":"2026-09-29 13:42:28","last":"2026-09-29 13:42:28","batch":1},{"spu":"607595851017126","img":"https://img.kwcdn.com/product/temu-avi/image-crop/8fc21017-b093-4ab4-8e5c-de349ff3eeda.jpg","first":"2026-08-25 08:22:42","last":"2026-08-25 08:22:42","batch":1},{"spu":"606685317934126","img":"https://img.kwcdn.com/product/temu-avi/image-crop/c72c912e-037a-4b3d-a448-84061e0a0e48.jpg","first":"2026-08-25 13:21:32","last":"2026-08-25 13:21:32","batch":1},{"spu":"607645243157352","img":"https://img.kwcdn.com/product/temu-avi/image-crop/96c6952c-d160-4b45-964e-fc6419c9fdfe.jpg","first":"2026-09-10 13:27:50","last":"2026-10-21 09:16:01","batch":2},{"spu":"607224336374494","img":"https://img.kwcdn.com/product/temu-avi/image-crop/344ab1a4-f3bb-49e0-a032-dcae58080ebd.jpg","first":"2026-08-23 12:55:04","last":"2026-08-23 12:55:04","batch":1},{"spu":"607309833068308","img":"https://img.kwcdn.com/product/temu-avi/image-crop/17516b56-e992-4591-8cd4-2292d345a720.jpeg","first":"2026-08-28 16:06:07","last":"2026-08-28 16:06:07","batch":1},{"spu":"607133739360428","img":"https://img.kwcdn.com/product/temu-avi/image-crop/bff7c529-1e0a-4fe2-9844-c9b9c8f18a1a.jpg","first":"2026-09-14 09:01:30","last":"2026-09-14 09:01:30","batch":1},{"spu":"606719275026472","img":"https://img.kwcdn.com/product/temu-avi/image-crop/7c1d78c3-e024-44ab-bcaa-45f7d3f600df.jpg","first":"2026-08-22 00:58:57","last":"2026-08-22 00:58:57","batch":1},{"spu":"607282989480541","img":"https://img.kwcdn.com/product/temu-avi/image-crop/272bc360-da76-49f4-aa45-fa211e81fe42.jpg","first":"2026-08-21 09:11:13","last":"2026-08-21 09:11:13","batch":1},{"spu":"607403248552843","img":"https://img.kwcdn.com/product/temu-avi/image-crop/87a43cc8-4eab-4af0-b4aa-8e46cb01020e.jpg","first":"2026-08-21 09:46:59","last":"2026-08-21 09:46:59","batch":1},{"spu":"605629242520593","img":"https://img.kwcdn.com/product/temu-avi/image-crop/a7e533e5-27b4-4a27-8451-af41bb6fcef7.jpg","first":"2026-05-21 12:00:46","last":"2026-08-26 21:45:35","batch":2},{"spu":"607555719906584","img":"https://img.kwcdn.com/product/temu-avi/image-crop/595cd21d-1ad5-413a-b68c-761c3ae472d0.jpg","first":"2026-08-24 01:17:11","last":"2026-09-21 22:33:24","batch":3},{"spu":"607525655146247","img":"https://img.kwcdn.com/product/temu-avi/image-crop/8816df98-24a6-4995-a8c2-0987ac9ebf8d.jpg","first":"2026-08-23 10:57:00","last":"2026-08-23 10:57:00","batch":1},{"spu":"607032270777729","img":"https://img.kwcdn.com/product/temu-avi/image-crop/2471cc56-ee2b-4af6-9955-b641cdb3c4af.jpg","first":"2026-08-21 10:59:32","last":"2026-08-21 10:59:32","batch":1},{"spu":"607162193510602","img":"https://img.kwcdn.com/product/temu-avi/image-crop/6432ba82-1691-4740-9f34-113654bcf79e.jpg","first":"2026-09-10 15:01:43","last":"2026-09-10 15:01:43","batch":1},{"spu":"607449956328703","img":"https://img.kwcdn.com/product/temu-avi/image-crop/56e60c72-b499-4caf-ab19-07ab22cd8e0c.jpg","first":"2026-09-11 09:47:13","last":"2026-10-28 10:12:54","batch":2},{"spu":"607467136214253","img":"https://img.kwcdn.com/product/temu-avi/image-crop/a67c4207-9227-40a8-bb55-2b46c207f1a8.jpg","first":"2026-09-19 18:25:52","last":"2026-09-19 18:25:52","batch":1},{"spu":"606940197420413","img":"https://img.kwcdn.com/product/temu-avi/image-crop/be500be8-95d8-4139-a15f-72b18c71e002.jpg","first":"2026-09-06 10:56:43","last":"2026-09-14 13:35:25","batch":2},{"spu":"606798463480691","img":"https://img.kwcdn.com/product/temu-avi/image-crop/7266b336-61e9-4323-a8c0-edc3d31d9bd6.jpg","first":"2026-09-08 08:08:33","last":"2026-09-15 16:13:41","batch":2},{"spu":"607614507265098","img":"https://img.kwcdn.com/product/temu-avi/image-crop/942a5c03-af15-4fda-b9ad-f29e0800ed23.jpg","first":"2026-08-09 22:52:15","last":"2026-08-09 22:52:15","batch":1},{"spu":"607492100749083","img":"https://img.kwcdn.com/product/temu-avi/image-crop/26f91382-b285-4fd6-a3b1-d7994f13b9ae.jpg","first":"2026-08-15 10:28:48","last":"2026-08-15 10:28:48","batch":1},{"spu":"607593099550364","img":"https://img.kwcdn.com/product/temu-avi/image-crop/2ce0bac6-eba3-423f-b432-488f3b8de94b.jpg","first":"2026-07-30 17:38:37","last":"2026-08-18 09:52:04","batch":2},{"spu":"607183936786681","img":"https://img.kwcdn.com/product/temu-avi/image-crop/649acd91-3a7f-45ba-815e-9a3cd5588667.jpg","first":"2026-08-27 09:52:22","last":"2026-08-27 09:52:22","batch":1},{"spu":"607418012541768","img":"https://img.kwcdn.com/product/open/01475325df1448c199624e54624680bf-goods.jpeg","first":"2026-08-08 16:22:54","last":"2026-08-08 16:22:54","batch":1},{"spu":"606727059689554","img":"https://img.kwcdn.com/product/temu-avi/image-crop/32cc3d46-5a07-455f-aff8-ad2cbbdae9a3.jpeg","first":"2026-08-02 21:17:48","last":"2026-08-02 21:17:48","batch":1},{"spu":"605809027182617","img":"https://img.kwcdn.com/product/temu-avi/image-crop/7567c0b7-71bc-48e5-97d3-636fda6a4277.jpg","first":"2026-06-13 14:10:22","last":"2026-07-31 14:07:05","batch":2},{"spu":"607567799506764","img":"https://img.kwcdn.com/product/temu-avi/image-crop/874d7a48-c987-46bf-8aa6-ef87145f3e12.jpg","first":"2026-08-14 15:21:24","last":"2026-08-30 11:31:48","batch":2},{"spu":"606786115452993","img":"https://img.kwcdn.com/product/temu-avi/image-crop/5b21ae1c-1026-423f-93db-e12ff1e7260d.jpg","first":"2026-07-28 21:48:05","last":"2026-07-28 21:48:05","batch":1},{"spu":"606648475178441","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d28ff272-8f88-450c-8f52-e98f49db874b.jpg","first":"2026-07-29 10:02:59","last":"2026-10-08 20:32:32","batch":2},{"spu":"607322785056641","img":"https://img.kwcdn.com/product/temu-avi/image-crop/295a33d9-baa2-49d5-82b3-ccd75fb58fa2.jpg","first":"2026-07-28 22:56:57","last":"2026-07-28 22:56:57","batch":1},{"spu":"607632022684581","img":"https://img.kwcdn.com/product/temu-avi/image-crop/763a3dc7-f51d-465b-9e40-8fed593def3c.jpg","first":"2026-08-20 13:39:22","last":"2026-08-20 13:39:22","batch":1},{"spu":"606620557901780","img":"https://img.kwcdn.com/product/temu-avi/image-crop/98abd23e-e24e-4758-aeea-d5d0c6034a31.jpg","first":"2026-08-11 09:12:55","last":"2026-08-11 09:12:55","batch":1},{"spu":"607363587274916","img":"https://img.kwcdn.com/product/temu-avi/image-crop/15440a8a-3587-4765-93fd-74545f79c60f.jpg","first":"2026-08-04 23:52:00","last":"2026-08-09 10:48:34","batch":2},{"spu":"607406536915589","img":"https://img.kwcdn.com/product/temu-avi/image-crop/7a3065cf-4cd1-4659-90bf-48d446f1b74e.jpg","first":"2026-08-07 13:04:50","last":"2026-10-20 19:12:24","batch":3},{"spu":"606942680433730","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d3d36a60-f46f-4c71-8944-7125d90eacfd.jpg","first":"2026-08-15 13:26:16","last":"2026-08-15 13:26:16","batch":1},{"spu":"607654571302044","img":"https://img.kwcdn.com/product/temu-avi/image-crop/acb64234-293c-45f4-82bb-2d4c534e46c6.jpg","first":"2026-08-06 09:09:13","last":"2026-08-06 09:09:13","batch":1},{"spu":"607396873254220","img":"https://img.kwcdn.com/product/Material/ImageCut/2142e8b2/14424122-ef58-4652-9c59-a806cd31f90f.jpg","first":"2026-07-22 00:56:12","last":"2026-07-22 00:56:12","batch":1},{"spu":"607433917337904","img":"https://img.kwcdn.com/product/temu-avi/image-crop/c496eff9-5052-428e-83a8-2e8ed410a6da.jpg","first":"2026-08-03 09:03:31","last":"2026-08-03 09:03:31","batch":1},{"spu":"607268561076826","img":"https://img.kwcdn.com/product/temu-avi/image-crop/084a83be-e9b6-438a-ae25-c67dd36c2872.jpg","first":"2026-08-01 09:07:09","last":"2026-08-01 09:07:09","batch":1},{"spu":"607565987587781","img":"https://img.kwcdn.com/product/temu-avi/image-crop/25180b35-83d6-4d89-bead-1ef2904b4ac8.jpg","first":"2026-07-27 09:07:59","last":"2026-07-27 09:07:59","batch":1},{"spu":"607355534195827","img":"https://img.kwcdn.com/product/temu-avi/image-crop/58a4a049-55db-4159-902f-d25e05ac4519.jpg","first":"2026-07-16 17:59:32","last":"2026-08-12 17:18:19","batch":2},{"spu":"607433112012020","img":"https://img.kwcdn.com/product/open/03d2c19b4a64404086654911be66953f-goods.jpeg","first":"2026-07-08 00:58:10","last":"2026-07-27 23:32:52","batch":2},{"spu":"606587758459350","img":"https://img.kwcdn.com/product/temu-avi/image-crop/34c877fa-5138-4ead-b742-d2bc7ea6f535.jpg","first":"2026-07-13 09:53:40","last":"2026-07-14 09:09:09","batch":3},{"spu":"606231276174482","img":"https://img.kwcdn.com/product/temu-avi/image-crop/fd658539-96bb-4c9e-ad37-a7a56af35bee.jpg","first":"2026-07-27 09:08:00","last":"2026-07-27 09:08:00","batch":1},{"spu":"606126049437151","img":"https://img.kwcdn.com/product/temu-avi/image-crop/2e566a0f-61c1-442d-8741-f75722de6f5e.jpg","first":"2026-07-03 14:37:10","last":"2026-07-03 14:37:10","batch":1},{"spu":"606062698660294","img":"https://img.kwcdn.com/product/open/58bbbe01d3814d7a9d91596d8d4a0229-goods.jpeg","first":"2026-07-13 09:43:02","last":"2026-07-13 09:43:02","batch":1},{"spu":"606640690556633","img":"https://img.kwcdn.com/product/temu-avi/image-crop/9178d209-b7d4-4efa-9575-10c5d620ff95.jpg","first":"2026-08-15 09:46:41","last":"2026-08-15 09:46:41","batch":1},{"spu":"606640690538192","img":"https://img.kwcdn.com/product/temu-avi/image-crop/12a26696-9036-48c7-bd2f-70473cd4d808.jpg","first":"2026-07-02 13:13:02","last":"2026-07-02 13:13:02","batch":1},{"spu":"605620317037529","img":"https://img.kwcdn.com/product/temu-avi/image-crop/98a826e9-faef-4240-91b2-76ca6a846bf4.jpg","first":"2026-07-20 00:21:59","last":"2026-07-20 00:21:59","batch":1},{"spu":"606356098617856","img":"https://img.kwcdn.com/product/temu-avi/image-crop/6e7e277a-d46a-4e3a-b190-91c9e9faeefc.jpg","first":"2026-08-01 08:20:26","last":"2026-10-27 11:50:48","batch":3},{"spu":"606180004961754","img":"https://img.kwcdn.com/product/temu-avi/image-crop/8d095f42-1e7a-441a-9d75-83b3a69a60d3.jpg","first":"2026-06-26 11:51:33","last":"2026-09-20 19:52:38","batch":2},{"spu":"606420523170394","img":"https://img.kwcdn.com/product/temu-avi/image-crop/0a79518c-033a-4744-aa00-b60146d7828f.jpg","first":"2026-07-01 16:23:28","last":"2026-07-01 17:42:06","batch":2},{"spu":"607682757029654","img":"https://img.kwcdn.com/product/temu-avi/image-crop/8f074e1f-4823-4bf4-8b9c-b92a043d7f1b.jpg","first":"2026-08-09 11:30:53","last":"2026-08-09 11:30:53","batch":1},{"spu":"606578900069933","img":"https://img.kwcdn.com/product/temu-avi/image-crop/332d29fc-d049-4d48-93e1-58bcdcdd4925.jpg","first":"2026-06-23 10:32:22","last":"2026-07-03 17:01:14","batch":3},{"spu":"606089273787106","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d1709cdf-22a2-4320-98bc-7c8b999a2545.jpg","first":"2026-06-29 08:31:54","last":"2026-06-29 08:31:54","batch":1},{"spu":"606124707293455","img":"https://img.kwcdn.com/product/temu-avi/image-crop/153d9df2-1c8f-4594-82b4-5291507c6a4c.jpg","first":"2026-06-15 11:23:14","last":"2026-06-16 10:19:57","batch":2},{"spu":"606139538324322","img":"https://img.kwcdn.com/product/temu-avi/image-crop/a9da7971-235d-46ac-a335-65c9a2f814c3.jpg","first":"2026-07-08 14:08:35","last":"2026-07-08 14:08:35","batch":1},{"spu":"606566350703064","img":"https://img.kwcdn.com/product/temu-avi/image-crop/96f8c161-4439-4ffe-bb9d-6c3fc7482dd4.jpg","first":"2026-06-09 14:45:21","last":"2026-06-15 11:09:07","batch":3},{"spu":"605726147712774","img":"https://img.kwcdn.com/product/temu-avi/image-crop/1e737ded-6a43-406e-ad03-ddee52471174.jpg","first":"2026-06-15 11:19:35","last":"2026-06-15 11:19:35","batch":1},{"spu":"605588708799741","img":"https://img.kwcdn.com/product/temu-avi/image-crop/0227d940-38c7-4bc0-9d85-b75380ecb53f.jpg","first":"2026-06-15 15:44:09","last":"2026-06-16 10:09:55","batch":2},{"spu":"605557033419432","img":"https://img.kwcdn.com/product/temu-avi/image-crop/7714715e-2d4f-4503-87d0-f18518518334.jpg","first":"2026-06-11 16:58:45","last":"2026-06-11 16:58:45","batch":1},{"spu":"606471861435414","img":"https://img.kwcdn.com/product/temu-avi/image-crop/27b6d7e2-5e17-4679-8b87-9b8b150f6c52.jpg","first":"2026-06-01 17:09:09","last":"2026-06-01 17:09:09","batch":1},{"spu":"605803994025181","img":"https://img.kwcdn.com/product/temu-avi/image-crop/17d6600b-30db-4d9f-96ce-e9efecdea2bd.jpg","first":"2026-05-31 23:05:46","last":"2026-06-29 22:51:56","batch":2},{"spu":"605686956163818","img":"https://img.kwcdn.com/product/open/5a48a0af11b14913aa165049d7feb141-goods.jpeg","first":"2026-05-31 14:02:23","last":"2026-05-31 14:02:23","batch":1},{"spu":"606427569560283","img":"https://img.kwcdn.com/product/temu-avi/image-crop/5276f91f-f715-4582-be7a-6b00a18b6167.jpg","first":"2026-05-30 10:05:06","last":"2026-05-30 10:05:06","batch":1},{"spu":"606514676906420","img":"https://img.kwcdn.com/product/open/72a7db2d9a574002b0b8e703839d0a76-goods.jpeg","first":"2026-05-18 01:19:18","last":"2026-05-18 01:19:18","batch":1},{"spu":"605964115799443","img":"https://img.kwcdn.com/product/temu-avi/image-crop/7ce53b5e-bfc7-4f3c-bdb2-1b7789e9ed74.jpg","first":"2026-06-08 13:57:34","last":"2026-09-09 14:32:03","batch":2},{"spu":"605965726365787","img":"https://img.kwcdn.com/product/temu-avi/image-crop/4fbed900-c1f4-45cc-a260-c603b322b909.jpg","first":"2026-04-23 16:58:15","last":"2026-04-24 14:09:53","batch":2},{"spu":"605639308883570","img":"https://img.kwcdn.com/product/temu-avi/image-crop/edbc949b-6747-4378-9823-63b12b6af577.jpg","first":"2026-04-19 14:26:18","last":"2026-04-19 14:26:18","batch":1},{"spu":"606170760725201","img":"https://img.kwcdn.com/product/temu-avi/image-crop/7b250e10-6e64-4d85-b03c-116659c74010.jpg","first":"2026-04-07 22:16:30","last":"2026-04-07 22:16:30","batch":1},{"spu":"606221763480837","img":"https://img.kwcdn.com/product/temu-avi/image-crop/ecd382f2-682a-40dc-af94-95fdae4c39e6.jpg","first":"2026-05-06 16:10:34","last":"2026-05-06 16:10:34","batch":1},{"spu":"606027147755531","img":"https://img.kwcdn.com/product/temu-avi/image-crop/05d55b76-8a31-4608-ab11-ac3697228577.jpg","first":"2026-04-08 22:20:50","last":"2026-05-27 20:50:07","batch":4},{"spu":"606267665958726","img":"https://img.kwcdn.com/product/temu-avi/image-crop/288f6bee-d2cc-40f5-b3af-dcd6e834f1b6.jpg","first":"2026-05-15 22:47:09","last":"2026-05-15 22:47:09","batch":1},{"spu":"605687845382505","img":"https://img.kwcdn.com/product/temu-avi/image-crop/5ad9706b-96dd-4226-8c5f-5606acd5fb13.jpg","first":"2026-05-08 14:42:26","last":"2026-05-08 14:42:26","batch":1},{"spu":"606329540288404","img":"https://img.kwcdn.com/product/temu-avi/image-crop/0ebadae6-ba23-491e-8ee7-514d6382c4ff.jpg","first":"2026-03-12 20:42:25","last":"2026-04-02 19:44:08","batch":3},{"spu":"606013860209865","img":"https://img.kwcdn.com/product/temu-avi/image-crop/2332df30-64e4-447a-92d5-f802756b85df.jpg","first":"2026-03-15 14:30:50","last":"2026-03-15 14:30:50","batch":1},{"spu":"606368731915003","img":"https://img.kwcdn.com/product/temu-avi/image-crop/08ac0ecd-f61e-4ab0-969b-00b185ef6733.jpg","first":"2026-03-08 11:35:53","last":"2026-03-12 20:41:32","batch":3},{"spu":"606550999534576","img":"https://img.kwcdn.com/product/temu-avi/image-crop/02b2d850-1722-424a-970e-0274eb388325.jpg","first":"2026-03-02 10:08:34","last":"2026-03-02 10:08:34","batch":1},{"spu":"606585157951102","img":"https://img.kwcdn.com/product/temu-avi/image-crop/90f18ccf-403e-45b3-a1fe-1a605c232020.jpg","first":"2026-01-27 09:36:39","last":"2026-01-27 09:36:39","batch":1},{"spu":"606448255924174","img":"https://img.kwcdn.com/product/temu-avi/image-crop/9e798ef3-ac1b-4390-8e76-7de549cdea0a.jpg","first":"2026-04-10 09:54:15","last":"2026-04-10 09:54:15","batch":1},{"spu":"606405037773107","img":"https://img.kwcdn.com/product/temu-avi/image-crop/b3e38aa3-bf62-40f5-a478-c6f35ef38b3c.jpg","first":"2026-03-28 14:37:23","last":"2026-10-14 14:16:27","batch":2},{"spu":"605584564828729","img":"https://img.kwcdn.com/product/temu-avi/image-crop/6f8d2739-c8b9-4f62-ac7f-c126b7457851.jpg","first":"2025-12-31 01:13:23","last":"2025-12-31 01:13:23","batch":1},{"spu":"601105772579603","img":"https://img.kwcdn.com/product/temu-avi/image-crop/46a97503-d302-47ef-bad0-49fb11bcf5f2.jpg","first":"2026-02-06 16:01:57","last":"2026-05-10 15:02:23","batch":2},{"spu":"601105751317235","img":"https://img.kwcdn.com/product/temu-avi/image-crop/17d63d99-90e6-470e-beb6-b240d2ea6377.jpg","first":"2026-09-24 14:41:32","last":"2026-09-24 14:41:32","batch":1},{"spu":"601105309827650","img":"https://img.kwcdn.com/product/temu-avi/image-crop/069b5eb3-8e64-4361-a1b9-0bb272f25352.jpg","first":"2025-12-06 07:34:45","last":"2025-12-06 07:34:45","batch":1},{"spu":"601103625459903","img":"https://img.kwcdn.com/product/temu-avi/image-crop/ab865f21-0786-4b1e-aea7-f7221071dc10.jpg","first":"2025-10-16 22:00:21","last":"2026-04-30 10:32:23","batch":4},{"spu":"601104636534635","img":"https://img.kwcdn.com/product/temu-avi/image-crop/b9eb19e8-7297-46c3-b756-7e470b1d1dfe.jpg","first":"2025-11-07 00:32:35","last":"2025-11-07 00:32:35","batch":1},{"spu":"601104797046117","img":"https://img.kwcdn.com/product/temu-avi/image-crop/4515acb9-4f57-4002-8231-b1c816bca2b6.jpg","first":"2025-11-14 20:00:20","last":"2025-11-17 09:51:47","batch":3},{"spu":"601104406623396","img":"https://img.kwcdn.com/product/temu-avi/image-crop/c10d5af7-10ed-4b60-b35f-0a45747cb4eb.jpg","first":"2025-10-29 19:09:35","last":"2025-10-29 19:09:35","batch":1},{"spu":"601104142786095","img":"https://img.kwcdn.com/product/temu-avi/image-crop/60a83b48-ceb5-408a-9c1f-40191e21f59f.jpg","first":"2025-11-29 20:09:55","last":"2025-12-20 20:39:40","batch":4},{"spu":"601104050234485","img":"https://img.kwcdn.com/product/temu-avi/image-crop/a25ce631-c3f2-4672-b5a3-e310a7ea29f5.jpg","first":"2025-12-08 11:36:54","last":"2025-12-08 11:36:54","batch":1},{"spu":"601104048523972","img":"https://img.kwcdn.com/product/temu-avi/image-crop/2faf32a0-baf3-4e55-85e9-01ce38fdc484.jpg","first":"2025-10-02 15:31:37","last":"2025-10-02 15:31:37","batch":1},{"spu":"601104143207152","img":"https://img.kwcdn.com/product/temu-avi/image-crop/2cc0e13a-b240-4236-8177-589818240d4a.jpg","first":"2025-10-13 10:08:06","last":"2025-10-13 10:08:06","batch":1},{"spu":"601103940908660","img":"https://img.kwcdn.com/product/temu-avi/image-crop/6f19d4d9-5f97-4298-833f-77b250eb45df.jpg","first":"2025-10-02 10:32:06","last":"2025-10-02 10:32:06","batch":1},{"spu":"601103730017965","img":"https://img.kwcdn.com/product/temu-avi/image-crop/bd4445dd-7918-4235-a66d-53db643c96d4.jpg","first":"2025-11-24 15:19:45","last":"2026-04-13 17:08:24","batch":2},{"spu":"601103583882988","img":"https://img.kwcdn.com/product/temu-avi/image-crop/821b81b3-7b12-475a-b657-433608145e01.jpg","first":"2025-09-18 20:10:53","last":"2025-12-30 15:41:39","batch":4},{"spu":"601103584498486","img":"https://img.kwcdn.com/product/temu-avi/image-crop/318fe22c-1647-461a-b04b-87d15b9fe1c0.jpg","first":"2025-09-20 11:34:15","last":"2025-09-20 11:34:15","batch":1},{"spu":"601103470045082","img":"https://img.kwcdn.com/product/temu-avi/image-crop/38ac864c-e6d3-45f0-be3d-7be3fc3b685b.jpg","first":"2025-09-09 08:45:45","last":"2025-09-09 08:45:45","batch":1},{"spu":"601103448458710","img":"https://img.kwcdn.com/product/temu-avi/image-crop/bb579e30-0d85-44e2-9814-1b0f9b308557.jpg","first":"2025-09-16 10:00:53","last":"2025-09-16 17:14:10","batch":2},{"spu":"601103319490329","img":"https://img.kwcdn.com/product/temu-avi/image-crop/c74da365-e0f0-4bf1-9ffd-77405a45370c.jpg","first":"2025-09-06 11:54:13","last":"2025-09-07 07:01:51","batch":2},{"spu":"601103277067028","img":"https://img.kwcdn.com/product/open/2284399c2ef34cdaa3a24c39e33ea34c-goods.jpeg","first":"2025-09-24 23:23:51","last":"2025-09-24 23:23:51","batch":1},{"spu":"601103026060382","img":"https://img.kwcdn.com/product/temu-avi/image-crop/218b7a42-68e3-4004-9785-28cfcc866332.jpg","first":"2025-10-18 21:12:15","last":"2026-05-15 20:16:38","batch":2},{"spu":"601102694570211","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d552fc82-bc31-4eef-b54a-d33a22334b88.jpg","first":"2025-09-04 11:12:15","last":"2025-11-05 08:44:26","batch":5},{"spu":"601102307973214","img":"https://img.kwcdn.com/product/temu-avi/image-crop/fe260ff4-a535-492c-a02a-dbf2aa36d634.jpg","first":"2025-07-27 19:26:11","last":"2026-10-23 22:49:33","batch":3},{"spu":"601102047210552","img":"https://img.kwcdn.com/product/temu-avi/image-crop/89e50615-bc99-447d-8701-498634cacb7a.jpg","first":"2025-07-14 10:11:48","last":"2025-07-22 08:38:04","batch":2},{"spu":"601102181116096","img":"https://img.kwcdn.com/product/temu-avi/image-crop/1b796d73-ceb0-4937-bdb9-393b35051d83.jpg","first":"2025-07-13 15:56:40","last":"2025-07-13 15:56:40","batch":1},{"spu":"601100418539562","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d5d8d6e8-3851-4a7f-8e3c-74259e99f767.jpg","first":"2025-04-02 14:27:54","last":"2025-07-25 14:16:52","batch":3},{"spu":"601101779305792","img":"https://img.kwcdn.com/product/temu-avi/image-crop/54d31780-d081-402d-a5bc-a9415ebb7d94.jpg","first":"2025-07-06 03:30:03","last":"2025-07-06 03:30:03","batch":1},{"spu":"601100131764675","img":"https://img.kwcdn.com/product/temu-avi/image-crop/db72815b-7961-46f1-bb50-dead9d925efa.jpg","first":"2025-04-14 14:48:52","last":"2025-07-09 11:48:20","batch":6},{"spu":"601101273882614","img":"https://img.kwcdn.com/product/temu-avi/image-crop/7eb3d4df-4840-4664-8830-ab2beff1cf16.jpg","first":"2025-05-26 08:43:33","last":"2025-07-30 22:36:35","batch":2},{"spu":"601101164310583","img":"https://img.kwcdn.com/product/temu-avi/image-crop/330ff727-0577-4752-8f8d-2e0233006e49.jpg","first":"2025-05-22 14:53:16","last":"2025-05-22 22:31:22","batch":2},{"spu":"601099682704890","img":"https://img.kwcdn.com/product/temu-avi/image-crop/3e4be2d0-6f80-434b-a559-3824734ea12b.jpg","first":"2024-10-02 19:48:52","last":"2025-05-17 20:29:53","batch":3},{"spu":"601100724986441","img":"https://img.kwcdn.com/product/temu-avi/image-crop/a774aaee-79a3-4de7-bcfb-3ccb30376fc6.jpg","first":"2025-06-03 13:56:45","last":"2025-07-03 09:38:26","batch":2},{"spu":"601100084950114","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d6a57d38-c57b-4815-a38e-b3217ebb127b.jpg","first":"2025-03-07 09:10:38","last":"2025-04-09 14:58:06","batch":3},{"spu":"601100361350226","img":"https://img.kwcdn.com/product/temu-avi/image-crop/6a9597c5-b1ba-42d6-b331-9c21e923a4cd.jpg","first":"2025-04-05 15:15:11","last":"2025-08-01 04:54:47","batch":5},{"spu":"601099811570177","img":"https://img.kwcdn.com/product/temu-avi/image-crop/db6190df-0ba5-4e6f-9d55-67d22ee650b6.jpg","first":"2024-12-04 20:08:17","last":"2024-12-05 08:56:32","batch":2},{"spu":"601099799617471","img":"https://img.kwcdn.com/product/temu-avi/image-crop/a4fa7793-a519-4508-b698-b675826ec641.jpg","first":"2024-11-26 23:18:42","last":"2024-11-26 23:18:42","batch":1},{"spu":"601099737034432","img":"https://img.kwcdn.com/product/temu-avi/image-crop/dd2dad28-440f-4fd2-8fdf-f43597bc8cee.jpg","first":"2024-11-15 20:03:00","last":"2025-03-25 10:32:18","batch":3},{"spu":"601099722261570","img":"https://img.kwcdn.com/product/temu-avi/image-crop/5cf5a73b-cc6f-4983-b18a-cd4b838bad39.jpg","first":"2024-10-30 17:17:43","last":"2025-04-13 17:15:47","batch":5},{"spu":"601099721933029","img":"https://img.kwcdn.com/product/temu-avi/image-crop/fa184a27-17c0-4f43-9100-d3d00db95068.jpg","first":"2024-10-31 13:46:02","last":"2024-10-31 13:46:02","batch":1},{"spu":"601099639388854","img":"https://img.kwcdn.com/product/temu-avi/image-crop/d87488ec-f3ba-469a-a3cd-508fad7829b8.jpg","first":"2024-08-28 17:30:10","last":"2025-07-23 20:35:56","batch":4},{"spu":"601099616512151","img":"https://img.kwcdn.com/product/temu-avi/image-crop/f9118d6f-9082-4dc0-aeb9-26e81da0f995.jpg","first":"2024-07-31 09:42:02","last":"2024-07-31 09:42:02","batch":1},{"spu":"601099599027284","img":"https://img.kwcdn.com/product/temu-avi/image-crop/ea964bf7-a5c9-434d-96f9-340652bb8eaa.jpg","first":"2024-07-03 15:43:15","last":"2024-07-03 15:43:15","batch":1},{"spu":"601099596040633","img":"https://img.kwcdn.com/product/temu-avi/image-crop/1a0d352b-1fc9-41b7-a0dc-e6884b93d394.jpg","first":"2024-07-07 22:57:25","last":"2024-07-26 09:21:00","batch":2},{"spu":"601099556514196","img":"https://img.kwcdn.com/product/Material/ImageCut/b35d77ef/9e15bce3-a650-4bfb-a540-b2bdb974b550.jpg","first":"2024-07-26 23:03:48","last":"2025-04-16 22:32:02","batch":5},{"spu":"601099540994452","img":"https://img.kwcdn.com/product/temu-avi/image-crop/47e0bc33-c1ab-4fc2-a8cd-43b33edc8449.jpg","first":"2024-01-05 20:01:25","last":"2024-07-20 10:10:54","batch":5},{"spu":"601099530656872","img":"https://img.kwcdn.com/product/temu-avi/image-crop/a1a6b734-5b2f-4eb1-8fe4-e46071d3c8d6.jpg","first":"2023-11-14 16:08:21","last":"2023-11-14 16:08:21","batch":1}];
+const DATA = [["607219202519349","https://img.kwcdn.com/product/temu-avi/image-crop/434c2314-fb2c-4ec8-8b31-1a4c4151fcaa.jpg"],["607385632516051","https://img.kwcdn.com/product/temu-avi/image-crop/48bf90e7-c8a4-4b16-b360-8d60cdc65742.jpg"],["607377042583319","https://img.kwcdn.com/product/temu-avi/image-crop/cbc143ea-ca0e-4a7e-99ca-40b2789e2863.jpg"],["607020560296395","https://img.kwcdn.com/product/temu-avi/image-crop/d4017269-55b6-416f-a944-54f2ebd201b0.jpg"],["607335435054785","https://img.kwcdn.com/product/temu-avi/image-crop/6a6b3e7a-da8f-4103-a17a-0b37aef1e1f0.jpg"],["607161488906782","https://img.kwcdn.com/product/temu-avi/image-crop/5e52461c-cca4-407a-a75a-51dbf3df9aa1.jpg"],["607161488869988","https://img.kwcdn.com/product/temu-avi/image-crop/67de86cd-7de5-4a65-ae98-35b0ec5df212.jpg"],["607111023039390","https://img.kwcdn.com/product/temu-avi/image-crop/c68b493d-6c91-4b23-ac63-85cf96e59a20.jpg"],["607287116675935","https://img.kwcdn.com/product/temu-avi/image-crop/7fd4fe97-deb3-4f23-bd51-c6802d57bbe2.jpg"],["607589911869549","https://img.kwcdn.com/product/temu-avi/image-crop/f00cd08f-78bf-40b4-94c3-6f98ba71cc18.jpg"],["607158301222436","https://img.kwcdn.com/product/temu-avi/image-crop/20f8366d-407e-441b-939e-f93087aa2356.jpg"],["607473947799335","https://img.kwcdn.com/product/temu-avi/image-crop/140e597e-ad97-4770-8cd9-d47a86519c0c.jpg"],["607637156501490","https://img.kwcdn.com/product/temu-avi/image-crop/f8f9100b-bba7-4963-a9c4-f3d400cd057c.jpg"],["606686660111110","https://img.kwcdn.com/product/temu-avi/image-crop/8b67bcd3-7eb2-4e4e-b765-332bf58f573f.jpg"],["607366036697938","https://img.kwcdn.com/product/temu-avi/image-crop/5c6369b5-702a-4d20-81e1-d76578a49c64.jpg"],["607434756222195","https://img.kwcdn.com/product/temu-avi/image-crop/9297a99f-f4ad-411e-bb21-e4e73f900b13.jpg"],["606635892258105","https://img.kwcdn.com/product/temu-avi/image-crop/bae56ca5-9d4e-4b36-8051-d48799bd4822.jpg"],["607013849420143","https://img.kwcdn.com/product/temu-avi/image-crop/7efb99a2-1ef4-4377-92f6-0e22b3336e77.jpg"],["606623007370266","https://img.kwcdn.com/product/temu-avi/image-crop/f6da108b-59d4-4714-b0c6-db6e4ab20772.jpg"],["607241482652936","https://img.kwcdn.com/product/temu-avi/image-crop/4b1c7126-ca1b-4f8f-b11c-2d49d8a89d54.jpg"],["607679569305247","https://img.kwcdn.com/product/temu-avi/image-crop/0895ed4f-b20f-4788-ad32-05198da9b7f0.jpg"],["607249669945749","https://img.kwcdn.com/product/temu-avi/image-crop/a4e6dfd8-f664-4283-86cf-9ec99c5e0c89.jpg"],["607232490078014","https://img.kwcdn.com/product/temu-avi/image-crop/915a5131-6ff5-4042-974d-9a1be35f62fb.jpg"],["606974792021320","https://img.kwcdn.com/product/temu-avi/image-crop/bfd0c3b3-4008-416c-8d0e-7a93585882b1.jpg"],["606903388228919","https://img.kwcdn.com/product/temu-avi/image-crop/cca528d4-ef4f-4af0-9840-a56802e3c43e.jpg"],["607043511526080","https://img.kwcdn.com/product/temu-avi/image-crop/6b979b08-142e-4208-9f50-e6528db89226.jpg"],["607271144774663","https://img.kwcdn.com/product/temu-avi/image-crop/b486648c-4286-4395-be62-8bcaacfe74b1.jpg"],["606638442389015","https://img.kwcdn.com/product/temu-avi/image-crop/e37d4313-dbdb-4479-9bb1-42ba6e62d716.jpg"],["607376371469406","https://img.kwcdn.com/product/temu-avi/image-crop/c650b27f-84df-403a-b463-45fdd2664825.jpg"],["606929694874756","https://img.kwcdn.com/product/temu-avi/image-crop/ce6ee817-a3a9-454e-bbe4-d60ceace0ae3.jpg"],["607449385947721","https://img.kwcdn.com/product/temu-avi/image-crop/dab4a4c9-26cd-4f69-b6ed-f744b88d8ba2.jpg"],["607403215046580","https://img.kwcdn.com/product/temu-avi/image-crop/63fb115d-ffac-4cd2-ba6d-3bed60001eea.jpg"],["607660913076570","https://img.kwcdn.com/product/temu-avi/image-crop/900bcb2f-a0f2-4ae4-afb2-c8e48720b618.jpg"],["607300135813404","https://img.kwcdn.com/product/temu-avi/image-crop/452df12f-fb7d-475d-bea1-88aae87611e8.jpg"],["606960833393541","https://img.kwcdn.com/product/temu-avi/image-crop/b2ee5576-16a8-4470-8b51-1076550d278e.jpg"],["606857754189118","https://img.kwcdn.com/product/temu-avi/image-crop/22ee49dc-0838-4843-a65c-ea7808a5340d.jpg"],["606857754154558","https://img.kwcdn.com/product/temu-avi/image-crop/01e107fe-a8fb-4057-aba1-b5c6d769a004.jpg"],["607491530273012","https://img.kwcdn.com/product/temu-avi/image-crop/7d7bef09-e88a-4374-883c-adb9a9254308.jpg"],["607023110396778","https://img.kwcdn.com/product/temu-avi/image-crop/480bb50d-2f01-423a-b6ea-3af25be41e59.jpg"],["607435427296706","https://img.kwcdn.com/product/temu-avi/image-crop/8015fe7f-b6c4-4a86-81ee-3bf859a8ad37.jpg"],["606722462699614","https://img.kwcdn.com/product/temu-avi/image-crop/35ea5f77-d39a-422d-a89e-ade7df6a425a.jpg"],["606761117429581","https://img.kwcdn.com/product/temu-avi/image-crop/cefee781-f258-4ea9-b308-ac5944d3608e.jpg"],["607495556840360","https://img.kwcdn.com/product/temu-avi/image-crop/01b5a209-d84c-47e2-ab13-ca4d860db8d3.jpg"],["606894261390905","https://img.kwcdn.com/product/temu-avi/image-crop/8075fe8f-3f90-4349-aaa3-a7dbd005a13e.jpg"],["607455291538592","https://img.kwcdn.com/product/temu-avi/image-crop/d1ea2b87-416d-4c96-beca-1411876c18ff.jpg"],["607147664465374","https://img.kwcdn.com/product/temu-avi/image-crop/57b62ad5-f005-4a5b-a4c2-74332c6d9432.jpg"],["607300672668499","https://img.kwcdn.com/product/temu-avi/image-crop/16ce2c02-24f4-4f1a-b3c1-580b1baa2abc.jpg"],["607137463941412","https://img.kwcdn.com/product/temu-avi/image-crop/a24967f4-d209-41f4-9cb4-8a9068734099.jpg"],["606662870060657","https://img.kwcdn.com/product/temu-avi/image-crop/0f5be0e8-b137-439b-a549-ea439ee8416f.jpg"],["606628510280932","https://img.kwcdn.com/product/temu-avi/image-crop/3ac50606-5c90-4e0c-9c02-f749a0cb5a6b.jpg"],["606963517747236","https://img.kwcdn.com/product/temu-avi/image-crop/085e7131-f6ed-4297-8c75-a5078cf296d3.jpg"],["606641395182733","https://img.kwcdn.com/product/temu-avi/image-crop/c16bd440-220b-4012-a245-713eceb9bf82.jpg"],["607362949702116","https://img.kwcdn.com/product/temu-avi/image-crop/60513d29-6137-4e66-8d31-31e7d276fae0.jpg"],["606649985117502","https://img.kwcdn.com/product/temu-avi/image-crop/ee3c5380-6eac-46cf-82f0-52a2c0e4accd.jpg"],["606801382760376","https://img.kwcdn.com/product/temu-avi/image-crop/6ddb6b1a-f278-4a2d-a96b-54fc8b369fd5.jpg"],["606767022981114","https://img.kwcdn.com/product/temu-avi/image-crop/b7b736dd-26c2-457f-8151-1c116a1b690b.jpg"],["606921641844269","https://img.kwcdn.com/product/temu-avi/image-crop/31ce9476-9329-4574-ba06-f03af8673997.jpg"],["606655353866343","https://img.kwcdn.com/product/temu-avi/image-crop/250f374c-cc2a-42df-ab37-f5d2b40d6cb3.jpg"],["606689713559822","https://img.kwcdn.com/product/temu-avi/image-crop/3964131e-ec19-42f3-9bf8-549735e84699.jpg"],["607086998071673","https://img.kwcdn.com/product/temu-avi/image-crop/bde077a7-d23a-45d4-896e-c8a9eb9fecf7.jpg"],["607138638305377","https://img.kwcdn.com/product/temu-avi/image-crop/450340e8-08bb-4661-93ce-064800eaa5f8.jpg"],["607232221655960","https://img.kwcdn.com/product/temu-avi/image-crop/58ff0f68-a9ef-4787-849f-68dfc7a88e83.jpg"],["606786786571001","https://img.kwcdn.com/product/temu-avi/image-crop/3c6e8f3c-d469-4006-aad7-6bb2c949f455.jpg"],["607029284415766","https://img.kwcdn.com/product/temu-avi/image-crop/d4a42ce4-582a-4209-9370-8912e65e43af.jpg"],["606824199779017","https://img.kwcdn.com/product/open/bb69ddb3117a4d8d90fb5fdba9ab4fb7-goods.jpeg"],["607122196665921","https://img.kwcdn.com/product/temu-avi/image-crop/46724a20-b187-4e4f-91f0-e281a6a2db3e.jpg"],["606860706993642","https://img.kwcdn.com/product/temu-avi/image-crop/a47a4060-299b-4d24-8ac6-4d8c61ea025c.jpg"],["606667433474579","https://img.kwcdn.com/product/temu-avi/image-crop/d43a7385-3742-4542-91e1-e5d228726878.jpg"],["607595146352971","https://img.kwcdn.com/product/temu-avi/image-crop/9af74c0f-bb70-4e4d-981d-6c234e0e5255.jpg"],["607359996914912","https://img.kwcdn.com/product/temu-avi/image-crop/331f10cc-aa88-4ac9-8ffd-2d7a2b3c91ba.jpg"],["607126458103579","https://img.kwcdn.com/product/temu-avi/image-crop/68b38e5b-e4d2-4e12-825f-a205da2d2040.jpg"],["607564544739267","https://img.kwcdn.com/product/temu-avi/image-crop/493b17b3-5358-4dba-a57a-b325283b1078.jpg"],["606838695290207","https://img.kwcdn.com/product/temu-avi/image-crop/93aa3a53-02a8-4bef-a063-f4e48820fe3d.jpg"],["607147932914174","https://img.kwcdn.com/product/temu-avi/image-crop/7a6313de-6671-41b9-8d9f-596da55c8ff6.jpg"],["607069549737600","https://img.kwcdn.com/product/temu-avi/image-crop/5104c130-9056-416c-a307-19298d466e5d.jpg"],["607322952847388","https://img.kwcdn.com/product/temu-avi/image-crop/f61f4d20-beea-4a91-84ca-b2420db42ba7.jpg"],["606700182572183","https://img.kwcdn.com/product/temu-avi/image-crop/15325b13-fd1d-494c-b519-3db470c3b4b8.jpg"],["607516125683966","https://img.kwcdn.com/product/temu-avi/image-crop/424130d3-ae6f-49b9-93cf-1c539b05ca64.jpg"],["607342179488222","https://img.kwcdn.com/product/temu-avi/image-crop/3810d885-9d1b-4fbb-a973-553d6b74d69a.jpg"],["607640813952254","https://img.kwcdn.com/product/temu-avi/image-crop/0cf13216-0a7b-4b19-8526-727a468cf93d.jpg"],["606662500917648","https://img.kwcdn.com/product/temu-avi/image-crop/678f658c-ecf9-4777-b52a-62a25927da8b.jpg"],["607691682507830","https://img.kwcdn.com/product/temu-avi/image-crop/d26122bc-3b67-4e22-bb20-b5baff97ccdc.jpg"],["607554243552256","https://img.kwcdn.com/product/temu-avi/image-crop/71abb765-169d-4aac-8f9b-040b773a10d6.jpg"],["606815509166644","https://img.kwcdn.com/product/temu-avi/image-crop/829ad560-75df-465e-b5c7-d392c117ae3a.jpg"],["607204203687780","https://img.kwcdn.com/product/temu-avi/image-crop/5f5e9aad-fe6c-4f14-81cf-736c5c38a11c.jpg"],["606864901247627","https://img.kwcdn.com/product/temu-avi/image-crop/4924ae15-c68d-4697-bf0c-55a38c1d1ac3.jpg"],["605783525800692","https://img.kwcdn.com/product/temu-avi/image-crop/acbf0816-6340-4213-b610-cc4b1e78d14f.jpg"],["607484450334731","https://img.kwcdn.com/product/temu-avi/image-crop/a843982e-6a04-4d5e-a96b-ecca06d83caf.jpg"],["607003413996367","https://img.kwcdn.com/product/temu-avi/image-crop/3606f408-a764-4b6f-833e-2c0f6216d7ad.jpg"],["606852419055206","https://img.kwcdn.com/product/temu-avi/image-crop/fccece6c-e2dc-469b-9951-8952b4407d76.jpg"],["605788894523114","https://img.kwcdn.com/product/temu-avi/image-crop/e1de47e8-fd25-40e4-8a0f-c9914ac69af8.jpg"],["607696245873437","https://img.kwcdn.com/product/temu-avi/image-crop/580ae1f8-11b8-4d1c-98af-a037396ffae2.jpg"],["606647401422556","https://img.kwcdn.com/product/temu-avi/image-crop/b1c412c3-04e4-4294-baa3-cf158502e331.jpg"],["606823293801961","https://img.kwcdn.com/product/open/0b7ffb3deede4bbbad08853ef4da70db-goods.jpeg"],["606823293794079","https://img.kwcdn.com/product/open/0b7ffb3deede4bbbad08853ef4da70db-goods.jpeg"],["607315067516532","https://img.kwcdn.com/product/temu-avi/image-crop/861d9cbc-0891-4653-84e4-e43b0c02c594.jpg"],["607177628552537","https://img.kwcdn.com/product/temu-avi/image-crop/a2fdaf2e-f1fd-48c6-80ea-22e841c99e9c.jpg"],["605830770444799","https://img.kwcdn.com/product/temu-avi/image-crop/4500b661-ea62-4820-a9a5-881f4d5846b4.jpg"],["607414388625556","https://img.kwcdn.com/product/temu-avi/image-crop/2e60f717-0c69-474c-b897-8369ca01cf09.jpg"],["607239368737549","https://img.kwcdn.com/product/temu-avi/image-crop/f40ab02e-d469-4f5f-97fd-27e1e7a77a51.jpg"],["607094078016802","https://img.kwcdn.com/product/temu-avi/image-crop/f77d795e-579c-4e22-b751-484d72f506cc.jpg"],["607603232979243","https://img.kwcdn.com/product/temu-avi/image-crop/437bd995-57f5-4e8a-a8c1-deed2ac16440.jpg"],["606807321900578","https://img.kwcdn.com/product/temu-avi/image-crop/d6b69c75-87ce-4ab3-b422-467128c68c94.jpg"],["607539613818295","https://img.kwcdn.com/product/temu-avi/image-crop/b5c8e71c-2d39-4071-a620-b005ad1f2a89.jpg"],["607403248552843","https://img.kwcdn.com/product/temu-avi/image-crop/87a43cc8-4eab-4af0-b4aa-8e46cb01020e.jpg"],["605629242520593","https://img.kwcdn.com/product/temu-avi/image-crop/a7e533e5-27b4-4a27-8451-af41bb6fcef7.jpg"],["607547129957485","https://img.kwcdn.com/product/temu-avi/image-crop/a14d3593-f8e8-4f0a-bc2e-d690b52f768a.jpg"],["607525655146247","https://img.kwcdn.com/product/temu-avi/image-crop/8816df98-24a6-4995-a8c2-0987ac9ebf8d.jpg"],["607032270777729","https://img.kwcdn.com/product/temu-avi/image-crop/2471cc56-ee2b-4af6-9955-b641cdb3c4af.jpg"],["607118170110765","https://img.kwcdn.com/product/temu-avi/image-crop/aca0b62c-46ee-4ab4-84fe-8fbae459de1e.jpg"],["607467136214253","https://img.kwcdn.com/product/temu-avi/image-crop/a67c4207-9227-40a8-bb55-2b46c207f1a8.jpg"],["607336139688077","https://img.kwcdn.com/product/temu-avi/image-crop/d79a15f7-680b-4d9f-a57e-fc292ccc528f.jpg"],["607020795141186","https://img.kwcdn.com/product/temu-avi/image-crop/dbfdc8c1-dc89-4f4a-b704-6a20da9b693f.jpg"],["607492100749083","https://img.kwcdn.com/product/temu-avi/image-crop/26f91382-b285-4fd6-a3b1-d7994f13b9ae.jpg"],["606868256709739","https://img.kwcdn.com/product/temu-avi/image-crop/ac866dc0-6ccd-4bde-9c1b-2d48a2212020.jpg"],["607297753469928","https://img.kwcdn.com/product/temu-avi/image-crop/65ab0514-5ea0-4e8a-9aa2-b961e706a94b.jpg"],["607598401135619","https://img.kwcdn.com/product/temu-avi/image-crop/c052d5cb-aaf6-457e-8e54-a5636f419eaa.jpg"],["606941271186174","https://img.kwcdn.com/product/temu-avi/image-crop/9af7646c-eb0f-42a8-bebd-4d60740ff393.jpg"],["607466129559438","https://img.kwcdn.com/product/temu-avi/image-crop/aea68c08-e02c-41f1-98b9-9d98b7e73304.jpg"],["606989052684019","https://img.kwcdn.com/product/temu-avi/image-crop/51c7000f-9cbb-4083-ae7c-f32e268c6936.jpg"],["606727059696214","https://img.kwcdn.com/product/temu-avi/image-crop/5b51a589-bd13-47f2-9acf-44d90370cffc.jpg"],["606902079607465","https://img.kwcdn.com/product/temu-avi/image-crop/cc559393-02fe-42f8-a452-29ba9cc47510.jpg"],["606786115452993","https://img.kwcdn.com/product/temu-avi/image-crop/5b21ae1c-1026-423f-93db-e12ff1e7260d.jpg"],["606674244964021","https://img.kwcdn.com/product/temu-avi/image-crop/09419a95-ccf3-4d6b-9729-82d70d2f641c.jpg"],["606697330465365","https://img.kwcdn.com/product/temu-avi/image-crop/c679e981-19c4-443c-bf38-caa087eeeb26.jpg"],["607548807740107","https://img.kwcdn.com/product/temu-avi/image-crop/884e0e43-e5fc-4bf2-8993-1089d1877ba0.jpg"],["607322785056641","https://img.kwcdn.com/product/temu-avi/image-crop/295a33d9-baa2-49d5-82b3-ccd75fb58fa2.jpg"],["606611967944407","https://img.kwcdn.com/product/temu-avi/image-crop/640531dd-9b1f-48ea-873b-4f22463356af.jpg"],["606952344133547","https://img.kwcdn.com/product/temu-avi/image-crop/956611c1-747a-4eba-aae1-84540c3a8384.jpg"],["606795577845328","https://img.kwcdn.com/product/open/af1435dde9134c7f8e1fb8f57faacb17-goods.jpeg"],["607233664462255","https://img.kwcdn.com/product/temu-avi/image-crop/1e7731bc-2ea5-408c-8e16-558d58846fc7.jpg"],["606903488856543","https://img.kwcdn.com/product/temu-avi/image-crop/a2f33a22-6c78-4683-a91a-4a1f5c57cc72.jpg"],["607505858038964","https://img.kwcdn.com/product/temu-avi/image-crop/5fc2ea36-9577-4df8-bd69-f25005d48179.jpg"],["605891252334853","https://img.kwcdn.com/product/temu-avi/image-crop/d0e3c8e3-3411-45b1-904f-79b1a9b7af78.jpg"],["607565987587781","https://img.kwcdn.com/product/temu-avi/image-crop/e6adaf4e-cf61-4c5c-a316-a1add8e45d69.jpg"],["607020526730514","https://img.kwcdn.com/product/temu-avi/image-crop/afc265db-92a9-4139-aafa-ab146d566469.jpg"],["606898120186285","https://img.kwcdn.com/product/temu-avi/image-crop/fc19b3d4-9fd8-4476-8fdf-9de175bc56fa.jpg"],["606231276174482","https://img.kwcdn.com/product/temu-avi/image-crop/fd658539-96bb-4c9e-ad37-a7a56af35bee.jpg"],["606059477494664","https://img.kwcdn.com/product/temu-avi/image-crop/24caf705-db48-4cc6-8dca-58a19c909a0d.jpg"],["607695105060562","https://img.kwcdn.com/product/temu-avi/image-crop/b412548a-a779-46ad-af97-8518155c078f.jpg"],["606870471294098","https://img.kwcdn.com/product/temu-avi/image-crop/08835930-ad18-4153-8074-5ff67e2b9683.jpg"],["606119607010431","https://img.kwcdn.com/product/temu-avi/image-crop/bef14743-02c7-4f61-bdce-20937c4ff465.jpg"],["605913448581272","https://img.kwcdn.com/product/temu-avi/image-crop/63822dee-9d3a-4b03-b41d-000b33f81017.jpg"],["605718027539693","https://img.kwcdn.com/product/temu-avi/image-crop/32786fbd-271e-4525-9670-4c24de891f81.jpg"],["605996328009881","https://img.kwcdn.com/product/temu-avi/image-crop/1e8420b1-038f-44b2-8f18-31c4eb4c8cde.jpg"],["606126049437151","https://img.kwcdn.com/product/temu-avi/image-crop/2e566a0f-61c1-442d-8741-f75722de6f5e.jpg"],["605766345960687","https://img.kwcdn.com/product/temu-avi/image-crop/e9556aeb-3b8a-46f3-a90d-5ad6c3660008.jpg"],["605620317037529","https://img.kwcdn.com/product/temu-avi/image-crop/98a826e9-faef-4240-91b2-76ca6a846bf4.jpg"],["606558767407661","https://img.kwcdn.com/product/temu-avi/image-crop/2d214e01-77a1-4d7d-bd9b-9f5b00e8cf3a.jpg"],["606258119674358","https://img.kwcdn.com/product/temu-avi/image-crop/4cec25b4-906f-4b57-8794-441fe6540bc4.jpg"],["605523680292687","https://img.kwcdn.com/product/temu-avi/image-crop/9daef5d7-f884-47f3-bc23-5619e4c13388.jpg"],["606219465004875","https://img.kwcdn.com/product/temu-avi/image-crop/d5add1bc-a3fd-46e0-bcfc-647d87aa37e9.jpg"],["606008206313370","https://img.kwcdn.com/product/temu-avi/image-crop/167bd98a-2b8a-4d8b-b00a-ab4272a9283e.jpg"],["606420523170394","https://img.kwcdn.com/product/temu-avi/image-crop/0a79518c-033a-4744-aa00-b60146d7828f.jpg"],["606010353776494","https://img.kwcdn.com/product/temu-avi/image-crop/0115d80b-1084-4078-8c04-f543b7365ea0.jpg"],["606195037364050","https://img.kwcdn.com/product/temu-avi/image-crop/6e8afa8c-bca5-4ae5-9b77-29e503e012a4.jpg"],["605839628855971","https://img.kwcdn.com/product/temu-avi/image-crop/7d8e210d-138a-476d-9256-f3bae14e0c7e.jpg"],["606166046361115","https://img.kwcdn.com/product/temu-avi/image-crop/852d7007-1f4f-481c-8e68-32ad1cd0a353.jpg"],["606288067009800","https://img.kwcdn.com/product/temu-avi/image-crop/4503f098-4cf1-45fd-93b7-f7eeb54c55ed.jpg"],["606089273787106","https://img.kwcdn.com/product/temu-avi/image-crop/d1709cdf-22a2-4320-98bc-7c8b999a2545.jpg"],["605696284278552","https://img.kwcdn.com/product/temu-avi/image-crop/0ab204e5-8c1c-441f-91f5-f740998e718c.jpg"],["605558845349782","https://img.kwcdn.com/product/temu-avi/image-crop/3b4a9b21-1427-409a-a3ae-0e731b710427.jpg"],["605713464194705","https://img.kwcdn.com/product/temu-avi/image-crop/4e192b94-1f1a-43b5-aada-e9e51db7c590.jpg"],["605609109885246","https://img.kwcdn.com/product/temu-avi/image-crop/d382d4ad-7bc5-49e7-9e40-8c498bcc3526.jpg"],["605954854772528","https://img.kwcdn.com/product/temu-avi/image-crop/c4cc38a6-74e9-4660-b23e-7181b8c1625c.jpg"],["605856070529076","https://img.kwcdn.com/product/temu-avi/image-crop/eab8224a-c854-4812-88b9-8af065558adc.jpg"],["606092293681182","https://img.kwcdn.com/product/temu-avi/image-crop/ed1b019c-92ba-4ab0-b8e8-9148b8632da9.jpg"],["605498514499133","https://img.kwcdn.com/product/temu-avi/image-crop/29d4ebdd-5189-4c65-9fd8-2e9d22bac3ef.jpg"],["605992972601116","https://img.kwcdn.com/product/temu-avi/image-crop/eaa57c84-712d-44ae-81ff-fc7d5ad3424a.jpg"],["606126116556393","https://img.kwcdn.com/product/temu-avi/image-crop/152e30a3-22de-49e9-8154-e5eefa4154a0.jpg"],["606151886353031","https://img.kwcdn.com/product/open/7c78c6618207486192c838f875af2726-goods.jpeg"],["605603204269629","https://img.kwcdn.com/product/temu-avi/image-crop/2d22e877-b713-4d1a-b7b6-569a8a0ac931.jpg"],["605562402115674","https://img.kwcdn.com/product/temu-avi/image-crop/0ebe6fa5-6e02-4bb5-a781-d0683acdebaf.jpg"],["606176582425421","https://img.kwcdn.com/product/temu-avi/image-crop/f626b4e6-6ffb-4a46-b495-45858f0020ce.jpg"],["606004783726197","https://img.kwcdn.com/product/temu-avi/image-crop/e92e1ea1-9328-4ed8-8058-2b016ec33dbb.jpg"],["606448323014508","https://img.kwcdn.com/product/temu-avi/image-crop/a73fadaa-170d-43da-a664-ec3989baebdf.jpg"],["606385156767733","https://img.kwcdn.com/product/temu-avi/image-crop/7757d796-5dab-4227-8fa9-07c7ee397c14.jpg"],["605813204721499","https://img.kwcdn.com/product/temu-avi/image-crop/b77ae2db-220d-450b-ae35-c6c50ed5481d.jpg"],["606510247697327","https://img.kwcdn.com/product/temu-avi/image-crop/63214fa6-ddfe-4337-9282-0b03dc72c6a3.jpg"],["606104373297300","https://img.kwcdn.com/product/temu-avi/image-crop/e774fca6-a023-4599-b59b-fd169c1aaa58.jpg"],["606465150563102","https://img.kwcdn.com/product/temu-avi/image-crop/34096cf2-18d4-4220-93e7-da61bd6d4378.jpg"],["606191346382150","https://img.kwcdn.com/product/temu-avi/image-crop/086a8abb-1590-482d-a1ad-1cc1307f385f.jpg"],["605858083782389","https://img.kwcdn.com/product/temu-avi/image-crop/6b7ff9f0-f96a-4ddd-90f5-20fb7ac7aab7.jpg"],["605785069314781","https://img.kwcdn.com/product/temu-avi/image-crop/e8678114-7c9c-4ea4-a562-7797be942d1d.jpg"],["605570320927820","https://img.kwcdn.com/product/temu-avi/image-crop/f0ce9452-58a7-45b7-bb95-1faf77b86a80.jpg"],["606392270336472","https://img.kwcdn.com/product/temu-avi/image-crop/843f9890-1198-4c18-aee5-a09a230dabaf.jpg"],["605664424363527","https://img.kwcdn.com/product/temu-avi/image-crop/b5d55180-0cd5-4c83-8220-d0477b5f0b81.jpg"],["606565411160721","https://img.kwcdn.com/product/temu-avi/image-crop/8f7e9bcb-5e46-4c30-b327-e4f4c67b1df5.jpg"],["605615686575190","https://img.kwcdn.com/product/temu-avi/image-crop/b4ef0707-4606-4173-bab6-cb81c1451d30.jpg"],["606090230107629","https://img.kwcdn.com/product/temu-avi/image-crop/561c597b-b479-4e2b-b93e-2b922d661f7d.jpg"],["606275719027949","https://img.kwcdn.com/product/temu-avi/image-crop/a1ff2445-46fe-42cd-a1a1-71f2eb76ffd2.jpg"],["606186866884033","https://img.kwcdn.com/product/temu-avi/image-crop/b326fbe2-0de2-4320-8919-6547be44b445.jpg"],["606170760725201","https://img.kwcdn.com/product/temu-avi/image-crop/7b250e10-6e64-4d85-b03c-116659c74010.jpg"],["606563213366278","https://img.kwcdn.com/product/temu-avi/image-crop/3caa5b24-7a18-4b63-9ca7-60d8dd88bf04.jpg"],["605799782953634","https://img.kwcdn.com/product/temu-avi/image-crop/5c93d1dd-ff12-4ce7-ab3d-4333c9dfed1b.jpg"],["605637647918342","https://img.kwcdn.com/product/temu-avi/image-crop/e501caa6-3bad-4209-8181-a030daaabb31.jpg"],["605656170000624","https://img.kwcdn.com/product/temu-avi/image-crop/847e4ca1-7103-4739-bd18-e125b2e75759.jpg"],["606164049848571","https://img.kwcdn.com/product/temu-avi/image-crop/05b4f3f8-f8dc-4cc0-beff-d039c8f97df1.jpg"],["606481877405606","https://img.kwcdn.com/product/temu-avi/image-crop/a4f85423-bc3c-4549-9795-21442baf1be0.jpg"],["606475971838948","https://img.kwcdn.com/product/temu-avi/image-crop/2c874a07-367c-43ee-88cb-7e1898610478.jpg"],["606377187582107","https://img.kwcdn.com/product/temu-avi/image-crop/e70252e1-0166-4582-af42-206b4c3aef0a.jpg"],["605887695523711","https://img.kwcdn.com/product/temu-avi/image-crop/f1522d0a-57d5-4ebc-84b0-ca85334ef7f6.jpg"],["605799648721051","https://img.kwcdn.com/product/temu-avi/image-crop/8326ea68-3462-4555-920f-bf0524ae3878.jpg"],["606307797020719","https://img.kwcdn.com/product/temu-avi/image-crop/17275b47-1b10-4aa0-b661-ba914cb8eaa1.jpg"],["606550999534576","https://img.kwcdn.com/product/temu-avi/image-crop/02b2d850-1722-424a-970e-0274eb388325.jpg"],["605836759954157","https://img.kwcdn.com/product/temu-avi/image-crop/8afff689-1ae1-4e6e-b318-463bab696d80.jpg"],["606448255924174","https://img.kwcdn.com/product/temu-avi/image-crop/9e798ef3-ac1b-4390-8e76-7de549cdea0a.jpg"],["606081304651943","https://img.kwcdn.com/product/temu-avi/image-crop/9153ee85-c1c5-4cdd-8da6-deab89c50125.jpg"],["601105136356811","https://img.kwcdn.com/product/temu-avi/image-crop/1e9d40b6-8d26-4a2f-a18e-da1adf57e442.jpg"],["606405037773107","https://img.kwcdn.com/product/temu-avi/image-crop/b3e38aa3-bf62-40f5-a478-c6f35ef38b3c.jpg"],["605556379119032","https://img.kwcdn.com/product/temu-avi/image-crop/6995d8e8-7790-4b46-b42c-48b92db16291.jpg"],["606129925021015","https://img.kwcdn.com/product/temu-avi/image-crop/6a4a540e-7f5f-4536-94b9-2bc9df5b72dc.jpg"],["601105688423058","https://img.kwcdn.com/product/temu-avi/image-crop/82c0f32b-f410-418a-bccd-62edf895aedd.jpg"],["601105439248173","https://img.kwcdn.com/product/temu-avi/image-crop/16bcd717-288c-49b3-8e31-9330d62be0f3.jpg"],["601105388530491","https://img.kwcdn.com/product/temu-avi/image-crop/49e8e811-8622-4e1f-a4a7-50a79e0cd948.jpg"],["601105276952674","https://img.kwcdn.com/product/temu-avi/image-crop/69e5f2d5-83a5-4754-b638-4e530a752a1e.jpg"],["601105229628000","https://img.kwcdn.com/product/temu-avi/image-crop/90d0388c-98bc-4130-b1d9-365ca7100c1f.jpg"],["601105171236997","https://img.kwcdn.com/product/temu-avi/image-crop/da212a67-da4d-4f8e-828c-2b432b367e00.jpg"],["601105170857531","https://img.kwcdn.com/product/temu-avi/image-crop/7a0e562a-c5bb-4488-8207-effb87b69682.jpg"],["601105156329391","https://img.kwcdn.com/product/temu-avi/image-crop/0f80456e-615b-4e28-8231-16cafb6a9348.jpg"],["601105060851622","https://img.kwcdn.com/product/temu-avi/image-crop/d1438abf-75e9-4f3e-aabf-2bf51fa5137f.jpg"],["601105057899608","https://img.kwcdn.com/product/temu-avi/image-crop/b45dae34-9725-4d61-abfa-4bfffa762ee4.jpg"],["601105040561075","https://img.kwcdn.com/product/temu-avi/image-crop/456f8c07-b5d4-4369-b13c-2f208abd9724.jpg"],["601105039204773","https://img.kwcdn.com/product/temu-avi/image-crop/3091fb32-bf87-4c70-be0e-7126cd1527ca.jpg"],["601104959669371","https://img.kwcdn.com/product/temu-avi/image-crop/dbe1718d-6537-4061-a788-5eedab259b5b.jpg"],["601104907851772","https://img.kwcdn.com/product/temu-avi/image-crop/d76e3208-fd10-4600-b0c8-4b5855ef6b79.jpg"],["601102563196322","https://img.kwcdn.com/product/temu-avi/image-crop/8d716ead-83d5-471e-8a06-bbac95a1d400.jpg"],["601102047210552","https://img.kwcdn.com/product/temu-avi/image-crop/89e50615-bc99-447d-8701-498634cacb7a.jpg"],["601102163028584","https://img.kwcdn.com/product/temu-avi/image-crop/d0c32bd9-2b39-40ec-80eb-b4776fa0f60f.jpg"],["601102389169484","https://img.kwcdn.com/product/temu-avi/image-crop/d1a6d6fb-cc9f-4985-8fce-f7595e852d65.jpg"],["601102786393877","https://img.kwcdn.com/product/temu-avi/image-crop/110dd095-ff18-418c-8e67-9006d08fdd02.jpg"],["601103204074311","https://img.kwcdn.com/product/temu-avi/image-crop/02d4044c-54eb-49fe-86d0-7106adeb23c4.jpg"],["601104143207152","https://img.kwcdn.com/product/temu-avi/image-crop/2cc0e13a-b240-4236-8177-589818240d4a.jpg"],["601104264206478","https://img.kwcdn.com/product/temu-avi/image-crop/7a094918-0cb6-42e2-81b2-b739650a0b56.jpg"],["601103988390700","https://img.kwcdn.com/product/temu-avi/image-crop/045b853b-9deb-4f53-b618-b8438dd5f6a1.jpg"],["601103977378773","https://img.kwcdn.com/product/temu-avi/image-crop/6333e9f8-c091-49a3-89fd-42577b3e4d3e.jpg"],["601103918612409","https://img.kwcdn.com/product/temu-avi/image-crop/fa26cca7-ec77-4771-80c0-22d4164093bc.jpg"],["601103801427046","https://img.kwcdn.com/product/temu-avi/image-crop/4f49cdcc-e930-4c0d-ace3-9f564a8ec82b.jpg"],["601103082483283","https://img.kwcdn.com/product/temu-avi/image-crop/6d814b6d-9e65-4ab1-bd57-8787a212e6c0.jpg"],["601103525229757","https://img.kwcdn.com/product/temu-avi/image-crop/2bb556fc-dd17-4cf8-8329-bc85d962309e.jpg"],["601103457881192","https://img.kwcdn.com/product/temu-avi/image-crop/7112f300-233b-4e81-9cd6-45f7c0ba59af.jpg"],["601103448458710","https://img.kwcdn.com/product/temu-avi/image-crop/bb579e30-0d85-44e2-9814-1b0f9b308557.jpg"],["601104279918246","https://img.kwcdn.com/product/temu-avi/image-crop/78c7af01-c8cb-4540-9c29-ef07ae2110a7.jpg"],["601104356591529","https://img.kwcdn.com/product/temu-avi/image-crop/09d04a65-4e84-4c67-b934-3024c48762f4.jpg"],["601104381068172","https://img.kwcdn.com/product/temu-avi/image-crop/72dc8d2a-6a75-4f6b-bf52-e0a3c395a516.jpg"],["601103001963342","https://img.kwcdn.com/product/temu-avi/image-crop/e941f3e2-6f5c-4400-8dc8-98cd3078ecc7.jpg"],["601104385519334","https://img.kwcdn.com/product/temu-avi/image-crop/f53c5fd6-64e8-4e5e-a4f2-2b2011e175bf.jpg"],["601104570356719","https://img.kwcdn.com/product/temu-avi/image-crop/59fb8367-1c45-4a9f-93ff-8fc7a5b93911.jpg"],["601103320132529","https://img.kwcdn.com/product/temu-avi/image-crop/24f7f7c4-ebad-418d-a7e4-34016c7c3b17.jpg"],["601102055236775","https://img.kwcdn.com/product/temu-avi/image-crop/ac75a211-47f8-4c62-a4f5-d8e1f7b25fc4.jpg"],["601101258849077","https://img.kwcdn.com/product/temu-avi/image-crop/665f8307-885a-4268-b1fd-2798728725be.jpg"],["601101259355444","https://img.kwcdn.com/product/temu-avi/image-crop/813e57ac-b761-4a64-afc2-92fb67d4ffba.jpg"],["601102023183433","https://img.kwcdn.com/product/temu-avi/image-crop/6b234ded-2409-456b-b54c-a205aa9f9be4.jpg"],["601101899178142","https://img.kwcdn.com/product/temu-avi/image-crop/2876b285-defc-4e90-b4d9-79b4f6e322f7.jpg"],["601101889435990","https://img.kwcdn.com/product/temu-avi/image-crop/cb4ac818-5dca-41ea-94a1-01494272121a.jpg"],["601101889265630","https://img.kwcdn.com/product/temu-avi/image-crop/8521a0a5-22b2-461a-9608-5943ef5f9de8.jpg"],["601101855962386","https://img.kwcdn.com/product/temu-avi/image-crop/2d654b83-3b77-4c12-a752-8b94fbb7566f.jpg"],["601101819119416","https://img.kwcdn.com/product/temu-avi/image-crop/494a00d1-696a-4d56-993d-9d9252ca081e.jpg"],["601101819448235","https://img.kwcdn.com/product/temu-avi/image-crop/8deb8c87-7338-4b7f-a35b-2e81096cdbcb.jpg"],["601101599488129","https://img.kwcdn.com/product/temu-avi/image-crop/a02200dc-4577-4f3f-bfd4-040db0a5a058.jpg"],["601101163036003","https://img.kwcdn.com/product/open/93f9300eed844563a68bebe088ef0622-goods.jpeg"],["601101068343695","https://img.kwcdn.com/product/temu-avi/image-crop/81b14c5b-6d0c-44dd-bcfd-16a27eb6a919.jpg"],["601100962161376","https://img.kwcdn.com/product/temu-avi/image-crop/701e292d-e223-4ca4-b673-4b44a645cc55.jpg"],["601099664126798","https://img.kwcdn.com/product/temu-avi/image-crop/47b08d36-40ae-4b29-90d2-0dcb13c09108.jpg"],["601099941385801","https://img.kwcdn.com/product/temu-avi/image-crop/fda53fe2-85a5-4f9d-8f7e-d628d9199f21.jpg"],["601099983212315","https://img.kwcdn.com/product/temu-avi/image-crop/a35a3d67-617a-4ea2-974b-e79c2c25b8df.jpg"],["601100055682087","https://img.kwcdn.com/product/temu-avi/image-crop/4ef6f321-ccff-4ee8-8e95-a5de58943c70.jpg"],["601100150647118","https://img.kwcdn.com/product/temu-avi/image-crop/490ff09b-52ed-496c-a8a8-ac47b1d01afb.jpg"],["601100101396866","https://img.kwcdn.com/product/temu-avi/image-crop/7dacdc48-34a5-4a9a-96ba-b093b2ba0f09.jpg"],["601100084950114","https://img.kwcdn.com/product/temu-avi/image-crop/d6a57d38-c57b-4815-a38e-b3217ebb127b.jpg"],["601099761415294","https://img.kwcdn.com/product/temu-avi/image-crop/2f97f312-8213-4d61-a98f-97babb5cab8e.jpg"],["601099764687871","https://img.kwcdn.com/product/temu-avi/image-crop/f346e4fb-7d83-4293-a94f-324a808b4d16.jpg"],["601099737034432","https://img.kwcdn.com/product/temu-avi/image-crop/dd2dad28-440f-4fd2-8fdf-f43597bc8cee.jpg"],["601099710044206","https://img.kwcdn.com/product/temu-avi/image-crop/026d2969-5fd2-497b-9563-f036f953b8e0.jpg"],["601099702247403","https://img.kwcdn.com/product/temu-avi/image-crop/9a7d6464-83db-4b4a-8eee-a82b1832eb74.jpg"],["601099699982844","https://img.kwcdn.com/product/temu-avi/image-crop/a123372f-c29f-4c08-83e2-36c5a3384e27.jpg"],["601099695869446","https://img.kwcdn.com/product/temu-avi/image-crop/d0599f4d-b74e-43dd-b290-bcf9f0c7e017.jpg"],["601099656354467","https://img.kwcdn.com/product/temu-avi/image-crop/74d4439c-4e35-44e8-ac04-7a7f674cfd9b.jpg"],["601099612067080","https://img.kwcdn.com/product/temu-avi/image-crop/08967784-c861-4832-b775-8db8fe07826b.jpg"],["601099623939432","https://img.kwcdn.com/product/temu-avi/image-crop/d8def653-152b-4dbd-a991-1172aa500761.jpg"],["601099628430647","https://img.kwcdn.com/product/temu-avi/image-crop/e3baa850-537e-4933-878b-e530ffabd75e.jpg"],["601099602162435","https://img.kwcdn.com/product/temu-avi/image-crop/3d4b608a-eeb0-4b4e-945e-f3a1df0fa91d.jpg"]];
 const grid = document.getElementById('grid');
+const empty = document.getElementById('empty');
 const q = document.getElementById('q');
-const clr = document.getElementById('clr');
-const sortSel = document.getElementById('sort');
-const shown = document.getElementById('shown');
+const FRONT = id => 'https://www.temu.com/goods.html?goods_id=' + id;
 
-let view = [];
-let cur = 0;
+function pad(n){ return String(n).padStart(3,'0'); }
 
-function esc(s){
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-function d10(s){ return s ? s.slice(0,10) : '—'; }
-
-function apply(){
-  const kw = q.value.trim().toLowerCase();
-  let arr = DATA.filter(d => !kw || d.spu.indexOf(kw) > -1);
-  const mode = sortSel.value;
-  arr.sort((a,b) => {
-    if (mode === 'first-desc') return b.first.localeCompare(a.first);
-    if (mode === 'first-asc')  return a.first.localeCompare(b.first);
-    if (mode === 'batch-desc') return b.batch - a.batch || b.first.localeCompare(a.first);
-    return a.spu.localeCompare(b.spu);
-  });
-  view = arr;
-  render();
-  return arr;
+function card([id,img],i){
+  const a = document.createElement('a');
+  a.className = 'card';
+  a.href = FRONT(id);
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  a.dataset.id = id;
+  a.innerHTML =
+    '<div class="thumb">'+
+      '<span class="idx">'+pad(i+1)+'</span>'+
+      '<img loading="lazy" decoding="async" src="'+img+'" alt="SPU '+id+'">'+
+      '<div class="veil"><span class="go">查看前台商品 ↗</span><span class="spu">'+id+'</span></div>'+
+    '</div>'+
+    '<div class="foot"><span class="id">'+id+'</span>'+
+      '<button class="copy" title="复制前台链接" aria-label="复制链接">'+
+        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>'+
+      '</button></div>';
+  return a;
 }
 
-function render(){
-  shown.textContent = view.length;
-  if (!view.length){
-    grid.innerHTML = '<p class="empty">没有匹配的商品，换个 SPU ID 试试。</p>';
+function render(list, keyword){
+  const resline = document.getElementById('resline');
+  if(keyword){ resline.classList.add('on'); resline.textContent = '筛选结果 · ' + list.length + ' 款'; }
+  else { resline.classList.remove('on'); }
+  grid.innerHTML = '';
+  const frag = document.createDocumentFragment();
+  list.forEach((d,i)=>frag.appendChild(card(d,i)));
+  grid.appendChild(frag);
+  empty.classList.toggle('on', list.length === 0);
+  observeAll();
+}
+
+let io;
+function observeAll(){
+  if(!('IntersectionObserver' in window)){
+    document.querySelectorAll('.card').forEach(c=>c.classList.add('in'));
     return;
   }
-  const h = [];
-  for (let i = 0; i < view.length; i++){
-    const d = view[i];
-    h.push(
-      '<article class="card" data-i="' + i + '">' +
-        '<div class="frame">' +
-          '<img src="' + esc(d.img) + '" alt="' + esc('SPU ' + d.spu) + '"' +
-            (i < 12 ? '' : ' loading="lazy"') + ' decoding="async" referrerpolicy="no-referrer"' +
-            ' onerror="this.parentNode.classList.add(&quot;broken&quot;)">' +
-          '<div class="fail"><span>头图加载失败</span><a href="' + esc(d.img) + '" target="_blank" rel="noopener">打开原图链接</a></div>' +
-          (d.batch > 1 ? '<span class="badge">×' + d.batch + '</span>' : '') +
-          '<div class="veil">' +
-            '<button class="act js-copy" data-spu="' + esc(d.spu) + '">复制 SPU</button>' +
-            '<button class="act js-open">查看大图</button>' +
-          '</div>' +
-        '</div>' +
-        '<div class="info">' +
-          '<div class="l1"><span class="spu">' + esc(d.spu) + '</span>' +
-            '<button class="cp js-copy" data-spu="' + esc(d.spu) + '">复制</button></div>' +
-          '<div class="l2">' +
-            (d.batch > 1 ? '<span class="batch">' + d.batch + ' 次加站</span>' : '') + '</div>' +
-        '</div>' +
-      '</article>'
-    );
+  if(!io){
+    io = new IntersectionObserver((es)=>{
+      es.forEach(e=>{
+        if(e.isIntersecting){
+          const el = e.target;
+          const count = [...grid.children].indexOf(el);
+          el.style.transitionDelay = Math.min(count%8,7)*40 + 'ms';
+          el.classList.add('in');
+          io.unobserve(el);
+        }
+      });
+    },{rootMargin:'120px 0px'});
   }
-  grid.innerHTML = h.join('');
+  document.querySelectorAll('.card').forEach(c=>io.observe(c));
 }
 
-/* toast + copy */
-const toast = document.getElementById('toast');
-let tt = null;
-function pop(msg){
-  toast.textContent = msg;
-  toast.classList.add('on');
-  clearTimeout(tt);
-  tt = setTimeout(() => toast.classList.remove('on'), 1500);
-}
-function copyText(txt, msg){
-  const done = () => pop(msg || ('已复制 ' + txt));
-  if (navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(txt).then(done).catch(() => fallback(txt, done));
-  } else fallback(txt, done);
-}
-function fallback(txt, done){
-  const ta = document.createElement('textarea');
-  ta.value = txt;
-  ta.style.position = 'fixed';
-  ta.style.opacity = '0';
-  document.body.appendChild(ta);
-  ta.select();
-  try { document.execCommand('copy'); done(); } catch(e){ pop('复制失败，请手动选择'); }
-  document.body.removeChild(ta);
-}
-
-/* interactions */
-q.addEventListener('input', () => {
-  clr.classList.toggle('on', q.value.length > 0);
-  apply();
+// 复制链接
+grid.addEventListener('click', e=>{
+  const btn = e.target.closest('.copy');
+  if(!btn) return;
+  e.preventDefault(); e.stopPropagation();
+  const id = btn.closest('.card').dataset.id;
+  const link = FRONT(id);
+  const done = ()=>{
+    btn.classList.add('done');
+    setTimeout(()=>btn.classList.remove('done'),1200);
+  };
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(link).then(done).catch(()=>fallback(link,done));
+  }else{ fallback(link,done); }
 });
-clr.addEventListener('click', () => { q.value = ''; clr.classList.remove('on'); apply(); q.focus(); });
-sortSel.addEventListener('change', apply);
+function fallback(text,cb){
+  const t = document.createElement('textarea');
+  t.value = text; t.style.position='fixed'; t.style.opacity='0';
+  document.body.appendChild(t); t.select();
+  try{ document.execCommand('copy'); cb(); }catch(err){}
+  document.body.removeChild(t);
+}
 
-grid.addEventListener('click', e => {
-  const cp = e.target.closest('.js-copy');
-  if (cp){ e.stopPropagation(); copyText(cp.dataset.spu); return; }
-  const card = e.target.closest('.card');
-  if (card) openLB(Number(card.dataset.i));
+// 搜索
+let timer;
+q.addEventListener('input', ()=>{
+  clearTimeout(timer);
+  timer = setTimeout(()=>{
+    const k = q.value.trim();
+    render(k ? DATA.filter(d=>d[0].includes(k)) : DATA, k);
+  },140);
 });
 
-document.getElementById('copyall').addEventListener('click', () => {
-  if (!view.length) return;
-  copyText(view.map(d => d.spu).join('\n'), '已复制 ' + view.length + ' 个 SPU ID');
-});
+// 回到顶部
+const topBtn = document.getElementById('top');
+window.addEventListener('scroll', ()=>{
+  topBtn.classList.toggle('on', window.scrollY > 700);
+}, {passive:true});
+topBtn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-/* lightbox */
-const lb = document.getElementById('lb');
-const lbimg = document.getElementById('lbimg');
-const lbs = document.getElementById('lbs');
-const lbsub = document.getElementById('lbsub');
-const lbc = document.getElementById('lbc');
-
-function openLB(i){
-  show(i);
-  lb.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLB(){
-  lb.classList.remove('open');
-  document.body.style.overflow = '';
-  lbimg.removeAttribute('src');
-}
-function show(i){
-  if (!view.length) return;
-  if (i < 0) i = view.length - 1;
-  if (i >= view.length) i = 0;
-  cur = i;
-  const d = view[i];
-  lbimg.src = d.img;
-  lbimg.alt = 'SPU ' + d.spu;
-  lbs.textContent = d.spu;
-  lbsub.textContent = d.batch > 1 ? ('共 ' + d.batch + ' 次加站') : '';
-  lbc.textContent = (i + 1) + ' / ' + view.length;
-}
-document.getElementById('lbclose').addEventListener('click', closeLB);
-document.getElementById('lbcopy').addEventListener('click', () => {
-  if (view[cur]) copyText(view[cur].spu);
-});
-document.getElementById('lbp').addEventListener('click', () => show(cur - 1));
-document.getElementById('lbn').addEventListener('click', () => show(cur + 1));
-lb.addEventListener('click', e => {
-  if (e.target === lb || e.target.classList.contains('lbstage')) closeLB();
-});
-document.addEventListener('keydown', e => {
-  if (!lb.classList.contains('open')) return;
-  if (e.key === 'Escape') closeLB();
-  if (e.key === 'ArrowLeft') show(cur - 1);
-  if (e.key === 'ArrowRight') show(cur + 1);
-});
-
-apply();
+render(DATA);
 </script>
 </body>
 </html>
